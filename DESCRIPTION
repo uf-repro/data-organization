@@ -1,0 +1,15 @@
+Package: DataOrganizationWorkshop
+Title: Data Organization in Spreadsheets and R
+Version: 0.1.0
+Authors@R: 
+    person(given = "Hao",
+           family = "Ye",
+           role = c("aut", "cre"),
+           email = "hao.ye@weecology.org",
+           comment = c(ORCID = "0000-0002-8630-1458"))
+Description: 
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0

@@ -1,0 +1,34 @@
+title: Data Organization in Spreadsheets and R
+
+template:
+  params:
+    bootswatch: darkly
+
+toc:
+  depth: 4
+
+navbar:
+   structure:
+     left:
+      - articles
+      - references
+     right: 
+      - syllabus
+      - lessons
+      - cheatsheet
+      - home
+      - github
+   components:
+     articles:
+       text: 
+     reference:
+       text: 
+     home:
+       icon: fas fa-home fa-lg
+       href: index.html
+     syllabus:
+       text: Syllabus
+       href: syllabus.html
+
+home:
+    sidebar: FALSE
