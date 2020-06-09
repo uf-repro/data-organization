@@ -15,7 +15,7 @@ navbar:
      right: 
       - syllabus
       - slides
-      - cheatsheet
+      - resources
       - home
       - github
    components:
@@ -32,6 +32,9 @@ navbar:
      slides:
        text: Slides
        href: slides.html
+     resources:
+       text: Resources
+       href: resources.html
 
 home:
     sidebar: FALSE
