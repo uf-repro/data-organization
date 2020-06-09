@@ -12,8 +12,5 @@ By the end of the workshop, participants should be able to:
 * employ the concept of tidy data for structuring tabular data
 * import and view tabular data in R
 
-## Additional Resources
+## References
 
-* [Best Practices for Using Google Sheets in Your Data Project](https://matthewlincoln.net/2018/03/26/best-practices-for-using-google-sheets-in-your-data-project.html) - blog post on making Google Sheets easy to work with during data entry and processing, as well as data analysis later
-
-* [Tidy Data](https://www.jstatsoft.org/article/view/v059i10)
