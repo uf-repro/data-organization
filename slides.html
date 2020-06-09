@@ -15,9 +15,9 @@
 class: inverse, center, middle
 
 # Data Organization in Spreadsheets and R
-## Hao Ye
-## Health Science Center Libraries, University of Florida
-## 2020-06-08
+### Hao Ye
+### Health Science Center Libraries, University of Florida
+### (updated: 2020-06-09)
 
 ---
 
@@ -126,7 +126,7 @@ Choose file names that are:
 
 ---
 
-# Plays Well with Default Ordering
+# Using Default Ordering
 
 * Files are usually sorted alphabetically
   - we can make use of this!
@@ -136,6 +136,12 @@ Choose file names that are:
   - `YYYY-MM-DD` format (when files are sorted alphabetically, this format makes the order chronological, too!)
 
 ---
+class: center
+&lt;img src="https://imgs.xkcd.com/comics/iso_8601_2x.png" width="60%" /&gt;
+
+[xkcd/1179](https://xkcd.com/1179/)
+
+---
 
 # Examples
 
@@ -143,9 +149,127 @@ Choose file names that are:
 ---
 class: inverse, center, middle
 
-# Naming Things
+# Structuring Tabular Data
 
 ---
+
+# Principles
+
+Make it easy for anyone to work with your data:
+* Structure data for analysis (i.e. "Tidy Data")
+* Don't use spreadsheet-formatting to store data!
+* Keep raw data raw
+* Include a Data Dictionary
+
+---
+
+# Tidy Data
+
+Properties of *tidy data*:
+* each column is a variable
+* each row is an observation
+* each table is a single observational unit
+
+---
+
+# Common issues
+
+* data values are stored in column headers
+  - e.g. dosage, date
+* multiple variables stored in one column
+* some variables are stored in rows in addition to columns
+* "1 observational unit = 1 table" is violated
+
+---
+
+# Examples
+
+
+
+
+
+
+
+
+---
+
+# Spreadsheet Formatting
+
+* prefer empty cells or `'NA'` for missing data
+  - *be careful about `'NA'` for certain types of data (e.g. it can mean "Namibia")*
+* do NOT space out data with empty rows/columns
+* do NOT use text formatting (e.g. bold/italics) to store information
+  - conditional formatting can help visualize
+* Excel LOVES to convert data into a date format
+
+---
+
+# Raw Data
+
+* store raw data for reproducibility
+  - e.g. if analysis tools change (as in bioinformatics workflows)
+* document processing steps in code or text
+  - someone else can see what processing was done, and reproduce it
+
+---
+
+# Data Dictionary
+
+* define what your rows and columns are
+  - e.g. are your observatons:
+    + individual subjects
+    + OR data collection sessions
+    + OR individual samples from a measurement device
+* define codes and categories
+  - e.g. country codes, species codes, acronyms
+* define relationships between multiple tables
+
+---
+
+class: inverse, center, middle
+
+# Reading Data into R
+
+---
+
+# Basics of R and RStudio
+
+* [R](https://cran.r-project.org/) is the programming language
+* [RStudio](https://rstudio.com/) is *optional* software that provides an interface to working in R
+  - **highly recommended** unless you have strong preferences and experience doing programming in a different environment
+
+---
+
+# R Packages
+
+The functionality of R is extended by *packages*:
+* open-source, developed by community members
+  - sometimes individuals, sometimes large teams
+* vary in scope:
+  - color themes from Wes Anderson movies
+  - tools for making interactive web applications
+
+---
+
+# Ways to Get Data into R
+
+* read in data files
+  - comma-separated values (`.csv`) tables
+  - R binary formats (`.Rdata`, `.Rda`, `.RDS`)
+* directly from Google Sheets
+  - [`googlesheets4`](https://googlesheets4.tidyverse.org/) package
+* directly from Excel
+  - [`readxl`](https://readxl.tidyverse.org/) package
+
+---
+
+# Demo
+
+---
+
+# What Next?
+
+* 
 
 ---
 
