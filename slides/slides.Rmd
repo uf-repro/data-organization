@@ -16,6 +16,7 @@ output:
 
 ```{r xaringan-themer, include = FALSE, warning = FALSE}
 library(xaringanthemer)
+library(magrittr)
 style_mono_accent(
   base_color = "#09274B",
   base_font_size = "32px", 
@@ -104,14 +105,13 @@ hye/
 # Example Project in R
 
 ```
-portalDS/
-├── analysis/
+project/
 ├── data/
 ├── figures/
 ├── output/
+├── paper/
 ├── R/
 ├── README.md
-└── vignettes/
 ```
 
 --
@@ -312,7 +312,35 @@ The functionality of R is extended by *packages*:
 
 ---
 
-# Demo
+# Demo (reading in CSV)
+
+```{r, eval = FALSE}
+dat <- read.csv("data/gapminder_demo.csv")
+```
+
+---
+
+# Demo (`googlesheets4`)
+
+```{r, eval = FALSE}
+# install.packages("googlesheets4")
+library(googlesheets4)
+
+gs4_deauth() # don't authenticate, we just want to read a publicly-visible document
+
+dat <- read_sheet("https://docs.google.com/spreadsheets/d/16apE3bvGjPqyeXqWUnKgBlvGxi7GoJ4_T8OzHpYRA4k/edit?usp=sharing")
+```
+
+---
+
+# Demo (`readxl`)
+
+```{r, eval = FALSE}
+# install.packages("readxl")
+library(readxl)
+
+dat <- read_excel("data/gapminder_demo.xlsx")
+```
 
 ---
 

@@ -1,6 +1,6 @@
 Package: DataOrganizationWorkshop
 Title: Data Organization in Spreadsheets and R
-Version: 0.4.0
+Version: 0.5.0
 Authors@R: 
     person(given = "Hao",
            family = "Ye",
@@ -11,6 +11,7 @@ Description:
 License: MIT
 Imports:
     dplyr, 
+    magrittr, 
     showtext,
     tidyr, 
     xaringan,

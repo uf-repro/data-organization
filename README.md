@@ -14,3 +14,4 @@ By the end of the workshop, participants should be able to:
 
 ## References
 
+* `gapminder_demo` data from the [gapminder](https://zenodo.org/record/1039839) R package
