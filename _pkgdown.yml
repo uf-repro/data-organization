@@ -14,7 +14,7 @@ navbar:
       - references
      right: 
       - syllabus
-      - lessons
+      - slides
       - cheatsheet
       - home
       - github
@@ -29,6 +29,9 @@ navbar:
      syllabus:
        text: Syllabus
        href: syllabus.html
+     slides:
+       text: Slides
+       href: slides.html
 
 home:
     sidebar: FALSE

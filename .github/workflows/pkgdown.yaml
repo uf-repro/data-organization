@@ -40,6 +40,17 @@ jobs:
       - name: Install package
         run: R CMD INSTALL .
 
+      - name: Render slides
+        run: |
+          rmarkdown::render("slides.Rmd")
+        shell: Rscript {0}
+        
+      - name: Copy slides
+        run: |
+          mv slides.html docs
+          mv slides_files docs
+          mv libs docs
+
       - name: Deploy package
         run: pkgdown::deploy_to_branch(new_process = FALSE)
         shell: Rscript {0}

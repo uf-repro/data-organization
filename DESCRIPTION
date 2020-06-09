@@ -9,6 +9,10 @@ Authors@R:
            comment = c(ORCID = "0000-0002-8630-1458"))
 Description: 
 License: MIT
+Imports:
+    showtext,
+    xaringan,
+    xaringanthemer
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
