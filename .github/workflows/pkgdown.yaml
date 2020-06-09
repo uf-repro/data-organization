@@ -42,14 +42,8 @@ jobs:
 
       - name: Render slides
         run: |
-          rmarkdown::render("slides.Rmd")
+          rmarkdown::render("slides.Rmd", output_dir = "docs")
         shell: Rscript {0}
-        
-      - name: Copy slides
-        run: |
-          mv slides.html docs
-          mv slides_files docs
-          mv libs docs
 
       - name: Deploy package
         run: pkgdown::deploy_to_branch(new_process = FALSE)
