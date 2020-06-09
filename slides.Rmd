@@ -1,0 +1,106 @@
+---
+title: "Data Organization in Spreadsheets and R"
+author: "Hao Ye"
+institute: "Health Science Center Libraries, University of Florida"
+date: "2020-06-07 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-themer, include = FALSE, warning = FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#09274B",
+  base_font_size = "32px", 
+  header_h1_font_size = "2.0rem",
+  header_h2_font_size = "1.5rem",
+  header_h3_font_size = "1.25rem", 
+  header_background_content_padding_top = "2rem", 
+  header_font_google = google_font("Lato"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"), 
+  extra_css = list("p" = list("margin-block-start" = "0.5em", 
+                              "margin-block-end" = "0.5em"), 
+                   "ul" = list("margin-block-start" = "0.5em", 
+                              "margin-block-end" = "0.5em"), 
+                   "pre" = list("margin-top" = "0.5em", 
+                              "margin-bottom" = "0.5em"))
+)
+```
+
+class: inverse, center, middle
+
+# Data Organization in Spreadsheets and R
+## Hao Ye
+## Health Science Center Libraries, University of Florida
+## 2020-06-08
+
+---
+
+# Goals
+
+The goal of this workshop is to provide *practical* advice for research projects:
+
+* you can implement these tips now
+* thess skills will scale
+  - more complex projects
+  - more collaborators
+
+---
+
+# Motivations
+
+* organizing your projects and data will:
+  - improve reproducibility
+  - make the work more accessible for others
+
+---
+
+# Learning Outcomes
+
+By the end of the workshop, participants will be able to:
+
+* describe and apply principles for organizing and naming files and folders
+* employ the concept of tidy data for structuring tabular data
+* import and view tabular data in R
+
+---
+class: inverse, center, middle
+
+# File and Folder Organization
+
+---
+
+# Principles for Organization
+
+Principles:
+* You don't want to spend time looking for a file or a particular version.
+* Using a system will build up habits for storing and finding files.
+
+---
+
+# Examples
+
+```
+hye
+├── projects
+├── README.md
+├── _pkgdown.yml
+├── data-organization.Rproj
+
+```
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
