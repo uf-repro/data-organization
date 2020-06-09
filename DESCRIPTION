@@ -1,6 +1,6 @@
 Package: DataOrganizationWorkshop
 Title: Data Organization in Spreadsheets and R
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: 
     person(given = "Hao",
            family = "Ye",
@@ -10,6 +10,7 @@ Authors@R:
 Description: 
 License: MIT
 Imports:
+    dplyr, 
     showtext,
     xaringan,
     xaringanthemer
@@ -17,3 +18,6 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
+URL: https://github.com/uf-repro/data-organization
+Depends: 
+    R (>= 2.10)
