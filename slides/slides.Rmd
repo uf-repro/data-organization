@@ -81,8 +81,8 @@ class: inverse, center, middle
 
 # Principles for Organization
 
-* You don't want to spend time looking for a file or a particular version.
-* Using a consistent system will build up habits for storing and finding files.
+* You don't want to spend time looking for stuff.
+  - Using a consistent system builds up habits.
 * Keep all project files in a single project folder.
 * Include a project README file that describes the project.
 * Separate sub-folders for raw data, processed data, code, figures.
@@ -133,6 +133,27 @@ Choose file names that are:
 
 ---
 
+# Examples (BAD)
+
+```
+Drake's FILES with spaces and punctuation.xlsx
+figure 1.png
+fig 2.png
+report on DEC1 final FINAL HY-comments ver3.docx
+```
+
+---
+
+# Examples (GOOD)
+
+```
+drakes-files-are-getting-better.xlsx
+fig01_scatterplot_length-vs-interest.png
+fig02_histogram_talk-attendance.png
+report-on-DEC1_2020-06-01_HY-comments.docx
+```
+
+---
 # Machine-Readable
 
 * Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
@@ -170,6 +191,14 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/iso_8601_2x.png")
 
 # Examples
 
+```
+site-A_2020-04-01_animal-count.dat
+site-A_2020-05-01_animal-count.dat
+site-B_2020-04-01_animal-count.dat
+site-B_2020-04-01_weather.dat
+site-B_2020-05-01_animal-count.dat
+site-B_2020-05-01_weather.dat
+```
 
 ---
 class: inverse, center, middle
@@ -212,8 +241,9 @@ Properties of *tidy data*:
 ```{r prep data, include = FALSE}
 # library(gapminder)
 # library(dplyr)
-# dat <- gapminder %>% 
-#   filter(country %in% c("Canada", "Chile", "Italy", "Sudan", "Thailand"), year > 2000) %>%
+# dat <- gapminder %>%
+#   filter(country %in% c("Canada", "Chile", "Italy", "Sudan", "Thailand"),
+#          year > 2000) %>%
 #   select(country, continent, year, pop)
 ```
 
@@ -344,9 +374,13 @@ dat <- read_excel("data/gapminder_demo.xlsx")
 
 ---
 
-# What Next?
+# Thanks
 
-* 
+* You'll be getting a survey:
+  - filling out info on what worked and what could be improved helps me!
+* Let me know what topics you want to see
+* Check back in on the libguide for updates:
+  - https://guides.uflib.ufl.edu/reproducibility
 
 ---
 
