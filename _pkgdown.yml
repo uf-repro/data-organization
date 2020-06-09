@@ -3,6 +3,8 @@ title: Data Organization in Spreadsheets and R
 template:
   params:
     bootswatch: darkly
+  assets:
+    slides
 
 toc:
   depth: 4

@@ -42,9 +42,11 @@ jobs:
 
       - name: Render slides
         run: |
-          rmarkdown::render("slides.Rmd", output_dir = "docs")
+          rmarkdown::render("slides/slides.Rmd")
         shell: Rscript {0}
 
       - name: Deploy package
         run: pkgdown::deploy_to_branch(new_process = FALSE)
         shell: Rscript {0}
+        
+        
