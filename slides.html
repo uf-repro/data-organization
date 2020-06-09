@@ -57,22 +57,95 @@ class: inverse, center, middle
 
 # Principles for Organization
 
-Principles:
 * You don't want to spend time looking for a file or a particular version.
-* Using a system will build up habits for storing and finding files.
+* Using a consistent system will build up habits for storing and finding files.
+* Keep all project files in a single project folder.
+* Include a project README file that describes the project.
+* Separate sub-folders for raw data, processed data, code, figures.
+
+---
+
+# General Folders I have
+
+```
+hye/
+├── grants/
+├── presentations_and_travels/
+├── projects/
+├── vitae/
+└── websites/
+```
+
+---
+
+# Example Project in R
+
+```
+portalDS/
+├── analysis/
+├── data/
+├── figures/
+├── output/
+├── R/
+├── README.md
+└── vignettes/
+```
+
+--
+* more examples in [Marwick et al. 2018 "Packaging Data Analytical Work Reproducibly Using R (and Friends)"](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986)
+
+---
+class: inverse, center, middle
+
+# Naming Things
+
+---
+
+# Principles
+
+Choose file names that are:
+* machine-readable
+* human-readable
+* plays well with default ordering
+
+---
+
+# Machine-Readable
+
+* Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
+* Use underscore `'_'` to separate grouping levels.
+* Use hyphen `'-'` to separate words within a level.
+
+---
+
+# Human-Readable
+
+* Use filenames that will help you find it later.
+* Use nouns for objects, use verbs for actions:
+  - e.g. `load-data.R`, `mtcars_measurements.csv`
+
+---
+
+# Plays Well with Default Ordering
+
+* Files are usually sorted alphabetically
+  - we can make use of this!
+* Left-pad with numbers to order steps in a sequence:
+  - e.g. `01_load-data.R`, `02_process-data.R`
+* Use ISO-8601 for dates:
+  - `YYYY-MM-DD` format (when files are sorted alphabetically, this format makes the order chronological, too!)
 
 ---
 
 # Examples
 
-```
-hye
-├── projects
-├── README.md
-├── _pkgdown.yml
-├── data-organization.Rproj
 
-```
+---
+class: inverse, center, middle
+
+# Naming Things
+
+---
 
 ---
 
