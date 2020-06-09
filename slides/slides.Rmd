@@ -239,12 +239,12 @@ Properties of *tidy data*:
 # Examples
 
 ```{r prep data, include = FALSE}
-# library(gapminder)
-# library(dplyr)
-# dat <- gapminder %>%
-#   filter(country %in% c("Canada", "Chile", "Italy", "Sudan", "Thailand"),
-#          year > 2000) %>%
-#   select(country, continent, year, pop)
+library(gapminder)
+library(dplyr)
+dat <- gapminder %>%
+  filter(country %in% c("Canada", "Chile", "Italy", "Sudan", "Thailand"),
+         year > 2000) %>%
+  select(country, continent, year, pop)
 ```
 
 *untidy data*
@@ -293,7 +293,7 @@ dat %>%
 # Data Dictionary
 
 * define what your rows and columns are
-  - e.g. are your observatons:
+  - e.g. are your observations?
     + individual subjects
     + OR data collection sessions
     + OR individual samples from a measurement device
@@ -314,6 +314,7 @@ class: inverse, center, middle
 * [R](https://cran.r-project.org/) is the programming language
 * [RStudio](https://rstudio.com/) is *optional* software that provides an interface to working in R
   - **highly recommended** unless you have strong preferences and experience doing programming in a different environment
+  - there are lots of versions for commercial clients, you probably want the free Desktop version -- https://rstudio.com/products/rstudio/download/#download
 
 ---
 
@@ -376,16 +377,8 @@ dat <- read_excel("data/gapminder_demo.xlsx")
 
 # Thanks
 
-* You'll be getting a survey:
+* You'll be getting a workshop survey:
   - filling out info on what worked and what could be improved helps me!
 * Let me know what topics you want to see
 * Check back in on the libguide for updates:
   - https://guides.uflib.ufl.edu/reproducibility
-
----
-
-class: center, middle
-
-# Thanks!
-
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
