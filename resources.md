@@ -22,3 +22,14 @@
 
 ## Importing Data into R
 
+* [Reading and Writing CSV Files](https://swcarpentry.github.io/r-novice-inflammation/11-supp-read-write-csv/)
+  - Software Carpentry's lesson on reading and writing CSV files
+
+* [RStudio's import tools](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
+  - Guide for importing data using RStudio
+
+* [googlesheets4](https://googlesheets4.tidyverse.org/)
+  - R package for interfacing with Google Sheets
+  
+* [readxl](https://readxl.tidyverse.org/)
+  - R package for interfacing with Excel files

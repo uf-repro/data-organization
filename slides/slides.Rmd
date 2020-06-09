@@ -24,7 +24,7 @@ style_mono_accent(
   header_h3_font_size = "1.25rem", 
   header_background_content_padding_top = "2rem", 
   header_font_google = google_font("Lato"),
-  text_font_google   = google_font("Montserrat", "300", "300i"),
+  text_font_google   = google_font("Montserrat", "300", "300i", "500"),
   code_font_google   = google_font("Fira Mono"), 
   extra_css = list("p" = list("margin-block-start" = "0.5em", 
                               "margin-block-end" = "0.5em"), 
@@ -217,10 +217,26 @@ Properties of *tidy data*:
 #   select(country, continent, year, pop)
 ```
 
+*untidy data*
 
+```{r echo = FALSE}
+dat %>% 
+  tidyr::pivot_wider(names_from = year, 
+                     values_from = pop) %>%
+  knitr::kable(format = "html")
+```
 
+---
 
+# Examples
 
+*tidy data*
+
+```{r echo = FALSE}
+dat %>%
+  head(6) %>%
+  knitr::kable(format = "html")
+```
 
 ---
 
@@ -284,6 +300,8 @@ The functionality of R is extended by *packages*:
 
 # Ways to Get Data into R
 
+* datasets included with R and packages
+  - `data()`
 * read in data files
   - comma-separated values (`.csv`) tables
   - R binary formats (`.Rdata`, `.Rda`, `.RDS`)

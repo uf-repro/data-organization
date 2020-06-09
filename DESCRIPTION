@@ -12,6 +12,7 @@ License: MIT
 Imports:
     dplyr, 
     showtext,
+    tidyr, 
     xaringan,
     xaringanthemer
 Encoding: UTF-8
