@@ -11,6 +11,7 @@ output:
     nature:
       highlightStyle: github
       highlightLines: true
+      highlightSpan: true
       countIncrementalSlides: false
 ---
 
@@ -26,13 +27,16 @@ style_mono_accent(
   header_background_content_padding_top = "2rem", 
   header_font_google = google_font("Lato"),
   text_font_google   = google_font("Montserrat", "300", "300i", "500"),
-  code_font_google   = google_font("Fira Mono"), 
+  code_font_google   = google_font("Source Code Pro"), 
   extra_css = list("p" = list("margin-block-start" = "0.5em", 
                               "margin-block-end" = "0.5em"), 
                    "ul" = list("margin-block-start" = "0.5em", 
                               "margin-block-end" = "0.5em"), 
+                   "li" = list("margin-block-start" = "0.5em", 
+                              "margin-block-end" = "0.5em"), 
                    "pre" = list("margin-top" = "0.5em", 
-                              "margin-bottom" = "0.5em"))
+                              "margin-bottom" = "0.5em")), 
+  link_color = "#339944"
 )
 ```
 
@@ -49,8 +53,8 @@ class: inverse, center, middle
 
 The goal of this workshop is to provide *practical* advice for research projects:
 
-* you can implement these tips now
-* thess skills will scale
+* you can use these tips now
+* concepts and skills will scale to:
   - more complex projects
   - more collaborators
 
@@ -58,9 +62,15 @@ The goal of this workshop is to provide *practical* advice for research projects
 
 # Motivations
 
+Why should you care about this topic?
+
+--
+
 * organizing your projects and data will:
   - improve reproducibility
   - make the work more accessible for others
+--
+    **including yourself at a later point!**
 
 ---
 
@@ -82,8 +92,8 @@ class: inverse, center, middle
 # Principles for Organization
 
 * You don't want to spend time looking for stuff.
-  - Using a consistent system builds up habits.
-* Keep all project files in a single project folder.
+  - Using a consistent system establishes habits.
+* Keep all files related to a project in a single folder.
 * Include a project README file that describes the project.
 * Separate sub-folders for raw data, processed data, code, figures.
 
@@ -91,20 +101,23 @@ class: inverse, center, middle
 
 # General Folders I have
 
-```
+<pre class = "hljs remark-code">
 hye/
 ├── grants/
-├── presentations_and_travels/
+├── presentations_and_travel/
 ├── projects/
 ├── vitae/
 └── websites/
-```
+</pre>
+
+--
+When I want to {work/apply for money/fill out forms/etc.}, I know where to start.
 
 ---
 
 # Example Project in R
 
-```
+<pre class = "hljs remark-code">
 project/
 ├── data/
 ├── figures/
@@ -112,7 +125,7 @@ project/
 ├── paper/
 ├── R/
 ├── README.md
-```
+</pre>
 
 --
 * more examples in [Marwick et al. 2018 "Packaging Data Analytical Work Reproducibly Using R (and Friends)"](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986)
@@ -126,37 +139,39 @@ class: inverse, center, middle
 
 # Principles
 
-Choose file names that are:
-* machine-readable
-* human-readable
-* plays well with default ordering
+Choose file names that:
+* are machine-readable
+* are human-readable
+* play well with default ordering
 
 ---
 
-# Examples (BAD)
+# Examples (NOT SO GOOD)
 
-```
+<pre class = "hljs remark-code">
 Drake's FILES with spaces and punctuation.xlsx
 figure 1.png
 fig 2.png
 report on DEC1 final FINAL HY-comments ver3.docx
-```
+</pre>
 
 ---
 
 # Examples (GOOD)
 
-```
+<pre class = "hljs remark-code">
 drakes-files-are-getting-better.xlsx
 fig01_scatterplot_length-vs-interest.png
 fig02_histogram_talk-attendance.png
 report-on-DEC1_2020-06-01_HY-comments.docx
-```
+</pre>
 
 ---
 # Machine-Readable
 
 * Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
+  - different computers and filesystems struggle with these
+  - using a smaller set of characters facilitates rmemebering the name
 * Use underscore `'_'` to separate grouping levels.
 * Use hyphen `'-'` to separate words within a level.
 
@@ -189,16 +204,21 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/iso_8601_2x.png")
 
 ---
 
-# Examples
+# Example
 
-```
+<pre class = "hljs remark-code">
 site-A_2020-04-01_animal-count.dat
 site-A_2020-05-01_animal-count.dat
 site-B_2020-04-01_animal-count.dat
 site-B_2020-04-01_weather.dat
 site-B_2020-05-01_animal-count.dat
 site-B_2020-05-01_weather.dat
-```
+</pre>
+
+--
+* files are organized by site
+  - dates of data collection are visible
+  - for a given site and date, types of measurement are clear
 
 ---
 class: inverse, center, middle
@@ -229,25 +249,24 @@ Properties of *tidy data*:
 # Common issues
 
 * data values are stored in column headers
-  - e.g. dosage, date
-* multiple variables stored in one column
+  - e.g. treatment values, dates of sampling
+* multiple variables are stored in one column
 * some variables are stored in rows in addition to columns
 * "1 observational unit = 1 table" is violated
+  - e.g. subject info and samples are stored in one table instead of separate tables with shared identifiers
 
 ---
 
-# Examples
+# Example (untidy data)
 
 ```{r prep data, include = FALSE}
-# library(gapminder)
-# library(dplyr)
-# dat <- gapminder %>%
-#   filter(country %in% c("Canada", "Chile", "Italy", "Sudan", "Thailand"),
-#          year > 2000) %>%
-#   select(country, continent, year, pop)
+library(gapminder)
+library(dplyr)
+dat <- gapminder %>%
+  filter(country %in% c("Canada", "Chile", "Italy", "Sudan", "Thailand"),
+         year > 2000) %>%
+  select(country, continent, year, pop)
 ```
-
-*untidy data*
 
 ```{r echo = FALSE}
 dat %>% 
@@ -256,11 +275,12 @@ dat %>%
   knitr::kable(format = "html")
 ```
 
+--
+* years of measurement as column headers
+
 ---
 
-# Examples
-
-*tidy data*
+# Examples (tidy data)
 
 ```{r echo = FALSE}
 dat %>%
@@ -268,12 +288,15 @@ dat %>%
   knitr::kable(format = "html")
 ```
 
+--
+* years of measurement as its own column
+
 ---
 
 # Spreadsheet Formatting
 
 * prefer empty cells or `'NA'` for missing data
-  - *be careful about `'NA'` for certain types of data (e.g. it can mean "Namibia")*
+  - *be careful about `'NA'` for certain types of data (e.g. country code for "Namibia")*
 * do NOT space out data with empty rows/columns
 * do NOT use text formatting (e.g. bold/italics) to store information
   - conditional formatting can help visualize
@@ -292,14 +315,14 @@ dat %>%
 
 # Data Dictionary
 
-* define what your rows and columns are
-  - e.g. are your observatons:
-    + individual subjects
-    + OR data collection sessions
-    + OR individual samples from a measurement device
-* define codes and categories
-  - e.g. country codes, species codes, acronyms
+* define your rows and columns are
+  - e.g. do rows correspond to:
+     + individual subjects
+     + OR data collection sessions
+     + OR individual samples from a measurement device
+* define codes, categories, acronyms
 * define relationships between multiple tables
+* [more detail on metadata](https://guides.uflib.ufl.edu/datamanagement/metadata)
 
 ---
 
@@ -314,6 +337,7 @@ class: inverse, center, middle
 * [R](https://cran.r-project.org/) is the programming language
 * [RStudio](https://rstudio.com/) is *optional* software that provides an interface to working in R
   - **highly recommended** unless you have strong preferences and experience doing programming in a different environment
+  - you probably want the [free Desktop version](https://rstudio.com/products/rstudio/download/#download)
 
 ---
 
@@ -321,8 +345,7 @@ class: inverse, center, middle
 
 The functionality of R is extended by *packages*:
 * open-source, developed by community members
-  - sometimes individuals, sometimes large teams
-* vary in scope:
+* packages vary in scope, e.g.
   - color themes from Wes Anderson movies
   - tools for making interactive web applications
 
@@ -335,16 +358,17 @@ The functionality of R is extended by *packages*:
 * read in data files
   - comma-separated values (`.csv`) tables
   - R binary formats (`.Rdata`, `.Rda`, `.RDS`)
-* directly from Google Sheets
-  - [`googlesheets4`](https://googlesheets4.tidyverse.org/) package
-* directly from Excel
-  - [`readxl`](https://readxl.tidyverse.org/) package
+* directly from Google Sheets -- [`googlesheets4`](https://googlesheets4.tidyverse.org/) package
+* directly from Excel -- [`readxl`](https://readxl.tidyverse.org/) package
 
 ---
 
 # Demo (reading in CSV)
 
 ```{r, eval = FALSE}
+url <- "https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.csv"
+download.file(url, "data/gapminder_demo.csv")
+
 dat <- read.csv("data/gapminder_demo.csv")
 ```
 
@@ -366,6 +390,9 @@ dat <- read_sheet("https://docs.google.com/spreadsheets/d/16apE3bvGjPqyeXqWUnKgB
 # Demo (`readxl`)
 
 ```{r, eval = FALSE}
+url <- "https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.xlsx"
+download.file(url, "data/gapminder_demo.xlsx")
+
 # install.packages("readxl")
 library(readxl)
 
@@ -376,16 +403,8 @@ dat <- read_excel("data/gapminder_demo.xlsx")
 
 # Thanks
 
-* You'll be getting a survey:
-  - filling out info on what worked and what could be improved helps me!
-* Let me know what topics you want to see
-* Check back in on the libguide for updates:
+* Please fill out the survey!
+  - this helps me deliver content that is best for you
+* Contact me for additional questions or consultation requests!
+* Check back in on the libguide for more modules and contact info:
   - https://guides.uflib.ufl.edu/reproducibility
-
----
-
-class: center, middle
-
-# Thanks!
-
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
