@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Syllabus • Data Organization in Spreadsheets and R</title>
+<title>NA • Data Organization in Spreadsheets and R</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Syllabus" />
+<meta property="og:title" content="NA" />
 
 
 
@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">Data Organization in Spreadsheets and R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.2</span>
       </span>
     </div>
 
@@ -119,13 +119,467 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Syllabus</h1>
+      <h1>NA</h1>
     </div>
 
-<div id="syllabus" class="section level1">
 
-<p>** Under Construction **</p>
+<div id="data-organization-in-spreadsheets-and-r" class="section level2">
+<h2 class="hasAnchor">
+<a href="#data-organization-in-spreadsheets-and-r" class="anchor"></a>Data Organization in Spreadsheets and R</h2>
 </div>
+<div id="intro" class="section level2">
+<h2 class="hasAnchor">
+<a href="#intro" class="anchor"></a>Intro</h2>
+<ul>
+<li>Goals
+<ul>
+<li>
+<em>practical</em> advice for research projects:</li>
+<li>you can use these tips now</li>
+<li>concepts and skills will scale to:
+<ul>
+<li>more complex projects</li>
+<li>more collaborators</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Motivations
+<ul>
+<li>organizing your projects and data will:
+<ul>
+<li>improve reproducibility</li>
+<li>make the work more accessible for others <strong>including yourself at a later point!</strong>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Learning Outcomes
+<ul>
+<li>describe and apply principles for organizing and naming files and folders</li>
+<li>employ the concept of tidy data for structuring tabular data</li>
+<li>import and view tabular data in R</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="file-and-folder-organization" class="section level2">
+<h2 class="hasAnchor">
+<a href="#file-and-folder-organization" class="anchor"></a>File and Folder Organization</h2>
+<ul>
+<li>
+<p>Principles for Organization</p>
+<ul>
+<li>You don’t want to spend time looking for stuff.
+<ul>
+<li>Using a consistent system establishes habits.</li>
+</ul>
+</li>
+<li>Keep all files related to a project in a single folder.</li>
+<li>Include a project README file that describes the project.</li>
+<li>Separate sub-folders for raw data, processed data, code, figures.</li>
+</ul>
+</li>
+<li>
+<p>General Folders I have</p>
+<ul>
+<li><code>grants/</code></li>
+<li><code>presentations_and_travel/</code></li>
+<li><code>projects/</code></li>
+<li><code>vitae/</code></li>
+<li><code>websites/</code></li>
+</ul>
+</li>
+<li>
+<p>Example Project in R</p>
+<pre><code>project/
+├── data/
+├── figures/
+├── output/
+├── paper/
+├── R/
+├── README.md</code></pre>
+<ul>
+<li>more examples in <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986">Marwick et al. 2018 “Packaging Data Analytical Work Reproducibly Using R (and Friends)”</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="naming-things" class="section level2">
+<h2 class="hasAnchor">
+<a href="#naming-things" class="anchor"></a>Naming Things</h2>
+<ul>
+<li>
+<p>Principles</p>
+<ul>
+<li>file names should:
+<ul>
+<li>are machine-readable</li>
+<li>are human-readable</li>
+<li>play well with default ordering</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Examples (NOT SO GOOD)</p>
+<pre><code>Drake's FILES with spaces and punctuation.xlsx
+figure 1.png
+fig 2.png
+report on DEC1 final FINAL HY-comments ver3.docx</code></pre>
+</li>
+<li>
+<p>Examples (GOOD)</p>
+<pre><code>drakes-files-are-getting-better.xlsx
+fig01_scatterplot_length-vs-interest.png
+fig02_histogram_talk-attendance.png
+report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
+</li>
+<li>
+<p>Machine-Readable</p>
+<ul>
+<li>Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
+<ul>
+<li>different computers and filesystems struggle with these</li>
+<li>using simpler names help to remember how it’s spelled</li>
+</ul>
+</li>
+<li>Use underscore <code>'_'</code> to separate grouping levels.</li>
+<li>Use hyphen <code><a href="https://rdrr.io/r/base/Arithmetic.html">'-'</a></code> to separate words within a level.</li>
+</ul>
+</li>
+<li>
+<p>Human-Readable</p>
+<ul>
+<li>Use filenames that will help you find it later.</li>
+<li>Use nouns for objects, use verbs for actions:
+<ul>
+<li>e.g. <code>load-data.R</code>, <code>mtcars_measurements.csv</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Using Default Ordering</p>
+<ul>
+<li>Files are usually sorted alphabetically
+<ul>
+<li>we can make use of this!</li>
+</ul>
+</li>
+<li>Left-pad with numbers to order steps in a sequence:
+<ul>
+<li>e.g. <code>01_load-data.R</code>, <code>02_process-data.R</code>
+</li>
+</ul>
+</li>
+<li>Use ISO-8601 for dates:
+<ul>
+<li>
+<code>YYYY-MM-DD</code> format (when files are sorted alphabetically, this format makes the order chronological, too!)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Example</p>
+<pre><code>site-A_2020-04-01_animal-count.dat
+site-A_2020-05-01_animal-count.dat
+site-B_2020-04-01_animal-count.dat
+site-B_2020-04-01_weather.dat
+site-B_2020-05-01_animal-count.dat
+site-B_2020-05-01_weather.dat</code></pre>
+<ul>
+<li>files are organized by site
+<ul>
+<li>dates of data collection are visible</li>
+<li>for a given site and date, types of measurement are clear</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="structuring-tabular-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#structuring-tabular-data" class="anchor"></a>Structuring Tabular Data</h2>
+<ul>
+<li>Principles
+<ul>
+<li>Make it easy for anyone to work with your data:
+<ul>
+<li>Structure data for analysis (i.e. “Tidy Data”)</li>
+<li>Don’t use spreadsheet-formatting to store data!</li>
+<li>Keep raw data raw</li>
+<li>Include a Data Dictionary</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tidy Data
+<ul>
+<li>each column is a variable</li>
+<li>each row is an observation</li>
+<li>each table is a single observational unit</li>
+</ul>
+</li>
+<li>Common issues
+<ul>
+<li>data values are stored in column headers
+<ul>
+<li>e.g. treatment values, dates of sampling</li>
+</ul>
+</li>
+<li>multiple variables are stored in one column</li>
+<li>some variables are stored in rows in addition to columns</li>
+<li>“1 observational unit = 1 table” is violated
+<ul>
+<li>e.g. subject info and samples are stored in one table instead of separate tables with shared identifiers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example (untidy data)
+<ul>
+<li>years of measurement as column headers</li>
+</ul>
+<table>
+<thead><tr class="header">
+<th align="left">country</th>
+<th align="left">continent</th>
+<th align="right">2002</th>
+<th align="right">2007</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Canada</td>
+<td align="left">Americas</td>
+<td align="right">31902268</td>
+<td align="right">33390141</td>
+</tr>
+<tr class="even">
+<td align="left">Chile</td>
+<td align="left">Americas</td>
+<td align="right">15497046</td>
+<td align="right">16284741</td>
+</tr>
+<tr class="odd">
+<td align="left">Italy</td>
+<td align="left">Europe</td>
+<td align="right">57926999</td>
+<td align="right">58147733</td>
+</tr>
+<tr class="even">
+<td align="left">Sudan</td>
+<td align="left">Africa</td>
+<td align="right">37090298</td>
+<td align="right">42292929</td>
+</tr>
+<tr class="odd">
+<td align="left">Thailand</td>
+<td align="left">Asia</td>
+<td align="right">62806748</td>
+<td align="right">65068149</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>Examples (tidy data)
+<ul>
+<li>years of measurement as its own column</li>
+</ul>
+<table>
+<thead><tr class="header">
+<th align="left">country</th>
+<th align="left">continent</th>
+<th align="right">year</th>
+<th align="right">pop</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Canada</td>
+<td align="left">Americas</td>
+<td align="right">2002</td>
+<td align="right">31902268</td>
+</tr>
+<tr class="even">
+<td align="left">Canada</td>
+<td align="left">Americas</td>
+<td align="right">2007</td>
+<td align="right">33390141</td>
+</tr>
+<tr class="odd">
+<td align="left">Chile</td>
+<td align="left">Americas</td>
+<td align="right">2002</td>
+<td align="right">15497046</td>
+</tr>
+<tr class="even">
+<td align="left">Chile</td>
+<td align="left">Americas</td>
+<td align="right">2007</td>
+<td align="right">16284741</td>
+</tr>
+<tr class="odd">
+<td align="left">Italy</td>
+<td align="left">Europe</td>
+<td align="right">2002</td>
+<td align="right">57926999</td>
+</tr>
+<tr class="even">
+<td align="left">Italy</td>
+<td align="left">Europe</td>
+<td align="right">2007</td>
+<td align="right">58147733</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>Spreadsheet Formatting
+<ul>
+<li>prefer empty cells or <code>'NA'</code> for missing data
+<ul>
+<li><em>be careful about <code>'NA'</code> for certain types of data (e.g. country code for “Namibia”)</em></li>
+</ul>
+</li>
+<li>do NOT space out data with empty rows/columns</li>
+<li>do NOT use text formatting (e.g. bold/italics) to store information
+<ul>
+<li>conditional formatting can help visualize</li>
+</ul>
+</li>
+<li>Excel LOVES to convert data into a date format</li>
+</ul>
+</li>
+<li>Raw Data
+<ul>
+<li>store raw data for reproducibility
+<ul>
+<li>e.g. if analysis tools change (as in bioinformatics workflows)</li>
+</ul>
+</li>
+<li>document processing steps in code or text
+<ul>
+<li>someone else can see what processing was done, and reproduce it</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Data Dictionary
+<ul>
+<li>define your rows and columns are
+<ul>
+<li>e.g. do rows correspond to:
+<ul>
+<li>individual subjects</li>
+<li>OR data collection sessions</li>
+<li>OR individual samples from a measurement device</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>define codes, categories, acronyms</li>
+<li>define relationships between multiple tables</li>
+<li><a href="https://guides.uflib.ufl.edu/datamanagement/metadata">more detail on metadata</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="reading-data-into-r" class="section level2">
+<h2 class="hasAnchor">
+<a href="#reading-data-into-r" class="anchor"></a>Reading Data into R</h2>
+<ul>
+<li>
+<p>Basics of R and RStudio</p>
+<ul>
+<li>
+<a href="https://cran.r-project.org/">R</a> is the programming language</li>
+<li>
+<a href="https://rstudio.com/">RStudio</a> is <em>optional</em> software that provides an interface to working in R
+<ul>
+<li>
+<strong>highly recommended</strong> unless you have strong preferences and experience doing programming in a different environment</li>
+<li>you probably want the <a href="https://rstudio.com/products/rstudio/download/#download">free Desktop version</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>R Packages</p>
+<ul>
+<li>The functionality of R is extended by <em>packages</em>:</li>
+<li>open-source, developed by community members</li>
+<li>packages vary in scope, e.g.
+<ul>
+<li>color themes from Wes Anderson movies</li>
+<li>tools for making interactive web applications</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Ways to Get Data into R</p>
+<ul>
+<li>datasets included with R and packages
+<ul>
+<li><code><a href="https://rdrr.io/r/utils/data.html">data()</a></code></li>
+</ul>
+</li>
+<li>read in data files
+<ul>
+<li>comma-separated values (<code>.csv</code>) tables</li>
+<li>R binary formats (<code>.Rdata</code>, <code>.Rda</code>, <code>.RDS</code>)</li>
+</ul>
+</li>
+<li>directly from Google Sheets – <a href="https://googlesheets4.tidyverse.org/"><code>googlesheets4</code></a> package</li>
+<li>directly from Excel – <a href="https://readxl.tidyverse.org/"><code>readxl</code></a> package</li>
+</ul>
+</li>
+<li>
+<p>Demo (reading in CSV)</p>
+<div class="sourceCode" id="cb5"><html><pre class="r"><span class="no">url</span> <span class="kw">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.csv"</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span>(<span class="no">url</span>, <span class="st">"data/gapminder_demo.csv"</span>)
+
+<span class="no">dat</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"data/gapminder_demo.csv"</span>)</pre></html></div>
+</li>
+<li>
+<p>Demo (<code>googlesheets4</code>)</p>
+<div class="sourceCode" id="cb6"><html><pre class="r"><span class="co"># install.packages("googlesheets4")</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">googlesheets4</span>)
+
+<span class="fu">gs4_deauth</span>() <span class="co"># don't authenticate, we just want to read a publicly-visible document</span>
+
+<span class="no">dat</span> <span class="kw">&lt;-</span> <span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/16apE3bvGjPqyeXqWUnKgBlvGxi7GoJ4_T8OzHpYRA4k/edit?usp=sharing"</span>)</pre></html></div>
+</li>
+<li>
+<p>Demo (<code>readxl</code>)</p>
+<div class="sourceCode" id="cb7"><html><pre class="r"><span class="no">url</span> <span class="kw">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.xlsx"</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span>(<span class="no">url</span>, <span class="st">"data/gapminder_demo.xlsx"</span>)
+
+<span class="co"># install.packages("readxl")</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">readxl</span>)
+
+<span class="no">dat</span> <span class="kw">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/gapminder_demo.xlsx"</span>)</pre></html></div>
+</li>
+</ul>
+</div>
+<div id="thanks" class="section level2">
+<h2 class="hasAnchor">
+<a href="#thanks" class="anchor"></a>Thanks</h2>
+<ul>
+<li>Contact me for additional questions or consultation requests!</li>
+<li>Check back in on the libguide for more modules and contact info:
+<ul>
+<li><a href="https://guides.uflib.ufl.edu/reproducibility" class="uri">https://guides.uflib.ufl.edu/reproducibility</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
 
   </div>
 
