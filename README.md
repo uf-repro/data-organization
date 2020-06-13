@@ -1,5 +1,10 @@
 # Data Organization in Spreadsheets and R
 
+<!-- badges: start -->
+[![GitHub Actions pkgdown workflow](https://github.com/uf-repro/data-organization/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/data-organization/actions?query=workflow%3Apkgdown)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3892184.svg)](https://doi.org/10.5281/zenodo.3892184)
+<!-- badges: end -->
+
 ## Description
 
 Have you ever cursed your past self for their choices when saving or recording data? Never fear! This workshop will introduce practices for organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of your choice. Attendees will leave with understanding of the general principles for file & folder management, tidy data, and software tools for basic data wrangling.
