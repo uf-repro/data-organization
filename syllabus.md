@@ -1,5 +1,4 @@
-Data Organization in Spreadsheets and R
----
+# Syllabus
 
 ## Intro
 
@@ -117,26 +116,99 @@ Data Organization in Spreadsheets and R
     + e.g. subject info and samples are stored in one table instead of separate tables with shared identifiers
 * Example (untidy data)
   - years of measurement as column headers
-  
-  |country  |continent |     2002|     2007|
-  |:--------|:---------|--------:|--------:|
-  |Canada   |Americas  | 31902268| 33390141|
-  |Chile    |Americas  | 15497046| 16284741|
-  |Italy    |Europe    | 57926999| 58147733|
-  |Sudan    |Africa    | 37090298| 42292929|
-  |Thailand |Asia      | 62806748| 65068149|
+  <table class="table table-striped">
+ <thead class="thead-dark">
+  <tr>
+   <th style="text-align:left;"> country </th>
+   <th style="text-align:left;"> continent </th>
+   <th style="text-align:right;"> 2002 </th>
+   <th style="text-align:right;"> 2007 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Canada </td>
+   <td style="text-align:left;"> Americas </td>
+   <td style="text-align:right;"> 31902268 </td>
+   <td style="text-align:right;"> 33390141 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chile </td>
+   <td style="text-align:left;"> Americas </td>
+   <td style="text-align:right;"> 15497046 </td>
+   <td style="text-align:right;"> 16284741 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Italy </td>
+   <td style="text-align:left;"> Europe </td>
+   <td style="text-align:right;"> 57926999 </td>
+   <td style="text-align:right;"> 58147733 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sudan </td>
+   <td style="text-align:left;"> Africa </td>
+   <td style="text-align:right;"> 37090298 </td>
+   <td style="text-align:right;"> 42292929 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Thailand </td>
+   <td style="text-align:left;"> Asia </td>
+   <td style="text-align:right;"> 62806748 </td>
+   <td style="text-align:right;"> 65068149 </td>
+  </tr>
+</tbody>
+</table>
 
 * Examples (tidy data)
   - years of measurement as its own column
-  
-  |country |continent | year|      pop|
-  |:-------|:---------|----:|--------:|
-  |Canada  |Americas  | 2002| 31902268|
-  |Canada  |Americas  | 2007| 33390141|
-  |Chile   |Americas  | 2002| 15497046|
-  |Chile   |Americas  | 2007| 16284741|
-  |Italy   |Europe    | 2002| 57926999|
-  |Italy   |Europe    | 2007| 58147733|
+  <table class="table table-striped">
+ <thead class="thead-dark">
+  <tr>
+   <th style="text-align:left;"> country </th>
+   <th style="text-align:left;"> continent </th>
+   <th style="text-align:right;"> year </th>
+   <th style="text-align:right;"> pop </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Canada </td>
+   <td style="text-align:left;"> Americas </td>
+   <td style="text-align:right;"> 2002 </td>
+   <td style="text-align:right;"> 31902268 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Canada </td>
+   <td style="text-align:left;"> Americas </td>
+   <td style="text-align:right;"> 2007 </td>
+   <td style="text-align:right;"> 33390141 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chile </td>
+   <td style="text-align:left;"> Americas </td>
+   <td style="text-align:right;"> 2002 </td>
+   <td style="text-align:right;"> 15497046 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chile </td>
+   <td style="text-align:left;"> Americas </td>
+   <td style="text-align:right;"> 2007 </td>
+   <td style="text-align:right;"> 16284741 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Italy </td>
+   <td style="text-align:left;"> Europe </td>
+   <td style="text-align:right;"> 2002 </td>
+   <td style="text-align:right;"> 57926999 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Italy </td>
+   <td style="text-align:left;"> Europe </td>
+   <td style="text-align:right;"> 2007 </td>
+   <td style="text-align:right;"> 58147733 </td>
+  </tr>
+</tbody>
+</table>
 
 * Spreadsheet Formatting
   - prefer empty cells or `'NA'` for missing data
