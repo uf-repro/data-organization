@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NA • Data Organization in Spreadsheets and R</title>
+<title>Syllabus • Data Organization in Spreadsheets and R</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NA" />
+<meta property="og:title" content="Syllabus" />
 
 
 
@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">Data Organization in Spreadsheets and R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.3</span>
       </span>
     </div>
 
@@ -119,14 +119,11 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>NA</h1>
+      <h1>Syllabus</h1>
     </div>
 
+<div id="syllabus" class="section level1">
 
-<div id="data-organization-in-spreadsheets-and-r" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-organization-in-spreadsheets-and-r" class="anchor"></a>Data Organization in Spreadsheets and R</h2>
-</div>
 <div id="intro" class="section level2">
 <h2 class="hasAnchor">
 <a href="#intro" class="anchor"></a>Intro</h2>
@@ -344,99 +341,205 @@ site-B_2020-05-01_weather.dat</code></pre>
 </li>
 <li>Example (untidy data)
 <ul>
-<li>years of measurement as column headers</li>
-</ul>
-<table>
-<thead><tr class="header">
-<th align="left">country</th>
-<th align="left">continent</th>
-<th align="right">2002</th>
-<th align="right">2007</th>
+<li>years of measurement as column headers
+<table class="table table-striped">
+<thead class="thead-dark"><tr>
+<th style="text-align:left;">
+country
+</th>
+<th style="text-align:left;">
+continent
+</th>
+<th style="text-align:right;">
+2002
+</th>
+<th style="text-align:right;">
+2007
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Canada</td>
-<td align="left">Americas</td>
-<td align="right">31902268</td>
-<td align="right">33390141</td>
+<tr>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:left;">
+Americas
+</td>
+<td style="text-align:right;">
+31902268
+</td>
+<td style="text-align:right;">
+33390141
+</td>
 </tr>
-<tr class="even">
-<td align="left">Chile</td>
-<td align="left">Americas</td>
-<td align="right">15497046</td>
-<td align="right">16284741</td>
+<tr>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Americas
+</td>
+<td style="text-align:right;">
+15497046
+</td>
+<td style="text-align:right;">
+16284741
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Italy</td>
-<td align="left">Europe</td>
-<td align="right">57926999</td>
-<td align="right">58147733</td>
+<tr>
+<td style="text-align:left;">
+Italy
+</td>
+<td style="text-align:left;">
+Europe
+</td>
+<td style="text-align:right;">
+57926999
+</td>
+<td style="text-align:right;">
+58147733
+</td>
 </tr>
-<tr class="even">
-<td align="left">Sudan</td>
-<td align="left">Africa</td>
-<td align="right">37090298</td>
-<td align="right">42292929</td>
+<tr>
+<td style="text-align:left;">
+Sudan
+</td>
+<td style="text-align:left;">
+Africa
+</td>
+<td style="text-align:right;">
+37090298
+</td>
+<td style="text-align:right;">
+42292929
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Thailand</td>
-<td align="left">Asia</td>
-<td align="right">62806748</td>
-<td align="right">65068149</td>
+<tr>
+<td style="text-align:left;">
+Thailand
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+62806748
+</td>
+<td style="text-align:right;">
+65068149
+</td>
 </tr>
 </tbody>
 </table>
 </li>
+</ul>
+</li>
 <li>Examples (tidy data)
 <ul>
-<li>years of measurement as its own column</li>
-</ul>
-<table>
-<thead><tr class="header">
-<th align="left">country</th>
-<th align="left">continent</th>
-<th align="right">year</th>
-<th align="right">pop</th>
+<li>years of measurement as its own column
+<table class="table table-striped">
+<thead class="thead-dark"><tr>
+<th style="text-align:left;">
+country
+</th>
+<th style="text-align:left;">
+continent
+</th>
+<th style="text-align:right;">
+year
+</th>
+<th style="text-align:right;">
+pop
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Canada</td>
-<td align="left">Americas</td>
-<td align="right">2002</td>
-<td align="right">31902268</td>
+<tr>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:left;">
+Americas
+</td>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:right;">
+31902268
+</td>
 </tr>
-<tr class="even">
-<td align="left">Canada</td>
-<td align="left">Americas</td>
-<td align="right">2007</td>
-<td align="right">33390141</td>
+<tr>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:left;">
+Americas
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+33390141
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Chile</td>
-<td align="left">Americas</td>
-<td align="right">2002</td>
-<td align="right">15497046</td>
+<tr>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Americas
+</td>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:right;">
+15497046
+</td>
 </tr>
-<tr class="even">
-<td align="left">Chile</td>
-<td align="left">Americas</td>
-<td align="right">2007</td>
-<td align="right">16284741</td>
+<tr>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+Americas
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+16284741
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Italy</td>
-<td align="left">Europe</td>
-<td align="right">2002</td>
-<td align="right">57926999</td>
+<tr>
+<td style="text-align:left;">
+Italy
+</td>
+<td style="text-align:left;">
+Europe
+</td>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:right;">
+57926999
+</td>
 </tr>
-<tr class="even">
-<td align="left">Italy</td>
-<td align="left">Europe</td>
-<td align="right">2007</td>
-<td align="right">58147733</td>
+<tr>
+<td style="text-align:left;">
+Italy
+</td>
+<td style="text-align:left;">
+Europe
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+58147733
+</td>
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
 </li>
 <li>Spreadsheet Formatting
 <ul>
@@ -579,7 +682,7 @@ site-B_2020-05-01_weather.dat</code></pre>
 </li>
 </ul>
 </div>
-
+</div>
 
   </div>
 
