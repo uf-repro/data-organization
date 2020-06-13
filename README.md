@@ -7,7 +7,7 @@
 
 ## Description
 
-Have you ever cursed your past self for their choices when saving or recording data? Never fear! This workshop will introduce practices for organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of your choice. Attendees will leave with understanding of the general principles for file & folder management, tidy data, and software tools for basic data wrangling.
+This workshop will introduce practices for organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of your choice. Attendees will leave with understanding of the general principles for file & folder management, tidy data, and software tools for basic data wrangling.
 
 ## Learning Outcomes
 
