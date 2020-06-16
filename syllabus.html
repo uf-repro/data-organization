@@ -244,7 +244,7 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 </ul>
 </li>
 <li>Use underscore <code>'_'</code> to separate grouping levels.</li>
-<li>Use hyphen <code><a href="https://rdrr.io/r/base/Arithmetic.html">'-'</a></code> to separate words within a level.</li>
+<li>Use hyphen <code>'-'</code> to separate words within a level.</li>
 </ul>
 </li>
 <li>
@@ -644,29 +644,35 @@ Europe
 </li>
 <li>
 <p>Demo (reading in CSV)</p>
-<div class="sourceCode" id="cb5"><html><pre class="r"><span class="no">url</span> <span class="kw">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.csv"</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span>(<span class="no">url</span>, <span class="st">"data/gapminder_demo.csv"</span>)
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="kw">url</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.csv"</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span>(<span class="kw">url</span>, <span class="st">"data/gapminder_demo.csv"</span>)
 
-<span class="no">dat</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"data/gapminder_demo.csv"</span>)</pre></html></div>
+<span class="kw">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"data/gapminder_demo.csv"</span>)
+</pre></div>
 </li>
 <li>
 <p>Demo (<code>googlesheets4</code>)</p>
-<div class="sourceCode" id="cb6"><html><pre class="r"><span class="co"># install.packages("googlesheets4")</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">googlesheets4</span>)
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="co"># install.packages("googlesheets4")</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">googlesheets4</span>)
 
 <span class="fu">gs4_deauth</span>() <span class="co"># don't authenticate, we just want to read a publicly-visible document</span>
 
-<span class="no">dat</span> <span class="kw">&lt;-</span> <span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/16apE3bvGjPqyeXqWUnKgBlvGxi7GoJ4_T8OzHpYRA4k/edit?usp=sharing"</span>)</pre></html></div>
+<span class="kw">dat</span> <span class="op">&lt;-</span> <span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/16apE3bvGjPqyeXqWUnKgBlvGxi7GoJ4_T8OzHpYRA4k/edit?usp=sharing"</span>)
+</pre></div>
 </li>
 <li>
 <p>Demo (<code>readxl</code>)</p>
-<div class="sourceCode" id="cb7"><html><pre class="r"><span class="no">url</span> <span class="kw">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.xlsx"</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span>(<span class="no">url</span>, <span class="st">"data/gapminder_demo.xlsx"</span>)
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="kw">url</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.xlsx"</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span>(<span class="kw">url</span>, <span class="st">"data/gapminder_demo.xlsx"</span>)
 
 <span class="co"># install.packages("readxl")</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">readxl</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">readxl</span>)
 
-<span class="no">dat</span> <span class="kw">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/gapminder_demo.xlsx"</span>)</pre></html></div>
+<span class="kw">dat</span> <span class="op">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/gapminder_demo.xlsx"</span>)
+</pre></div>
 </li>
 </ul>
 </div>
