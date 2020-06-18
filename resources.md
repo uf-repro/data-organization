@@ -15,6 +15,9 @@
 * ["Tidy Data"](https://www.jstatsoft.org/article/view/v059i10)
   - paper from Hadley Wickham on a framework for tabular data (see also [Chapter 12, "Tidy Data"](https://r4ds.had.co.nz/tidy-data.html) in R for Data Science)
   
+* ["Data Organization in Spreadsheets"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)
+  - paper from Karl Broman and Kara Woo on ... data organization in spreadsheets
+  
 * [Best Practices for Using Google Sheets in Your Data Project](https://matthewlincoln.net/2018/03/26/best-practices-for-using-google-sheets-in-your-data-project.html) - blog post on making Google Sheets easy to work with during data entry and processing, as well as data analysis later
 
 * ["Ten Simple Rules for Digital Data Storage"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
