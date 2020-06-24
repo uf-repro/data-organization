@@ -1,6 +1,6 @@
 Package: DataOrganizationWorkshop
 Title: Data Organization in Spreadsheets and R
-Version: 1.0.3
+Version: 1.0.4
 Authors@R: 
     person(given = "Hao",
            family = "Ye",

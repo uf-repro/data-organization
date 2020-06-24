@@ -7,7 +7,10 @@
 
 * ["naming things"](https://speakerdeck.com/jennybc/how-to-name-files)
   - slides from Jenny Bryan on naming files and folders (see also the [Reproducible Science Curriculum GitHub organization](https://github.com/Reproducible-Science-Curriculum/))
-  
+
+* "File Naming Convention Worksheet" [PDF](https://authors.library.caltech.edu/103626/1/FileNamingConventionWorksheet_Caltech.pdf) and [MS Word](https://authors.library.caltech.edu/103626/2/FileNamingConventionWorksheet_Generic.docx)
+  - [worksheet resource](https://resolver.caltech.edu/CaltechAUTHORS:20200601-161923247) from Kristin Briney at the Caltech Library
+
 * ["Packaging Data Analytical Work Reproducibly Using R (and Friends)"](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986)
   - paper from Ben Marwick, Carl Boettiger, and Lincoln Mullen on structuring projects as Research Compendia, with examples of varying complexity
   
