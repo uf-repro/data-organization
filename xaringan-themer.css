@@ -271,3 +271,9 @@ pre {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+.caption {
+  display: none;
+}
+.compact-table {
+  font-size: 0.5rem;
+}

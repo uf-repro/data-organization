@@ -1,5 +1,5 @@
 ---
-title: "Data Organization in Spreadsheets and R"
+title: "Data Organization in Spreadsheets"
 author: "Hao Ye"
 institute: "Health Science Center Libraries, University of Florida"
 date: "(updated: `r Sys.Date()`)"
@@ -35,7 +35,9 @@ style_mono_accent(
                    "li" = list("margin-block-start" = "0.5em", 
                               "margin-block-end" = "0.5em"), 
                    "pre" = list("margin-top" = "0.5em", 
-                              "margin-bottom" = "0.5em")), 
+                              "margin-bottom" = "0.5em"),
+                   ".caption" = list("display" = "none"),
+                   ".compact-table" = list("font-size" = "0.5rem")), 
   link_color = "#339944"
 )
 ```
@@ -70,7 +72,7 @@ Why should you care about this topic?
   - improve reproducibility
   - make the work more accessible for others
 --
-    **including yourself at a later point!**
+  - **this includes yourself at a later point!**
 
 ---
 
@@ -78,9 +80,9 @@ Why should you care about this topic?
 
 By the end of the workshop, participants will be able to:
 
-* describe and apply principles for organizing and naming files and folders
-* employ the concept of tidy data for structuring tabular data
-* import and view tabular data in R
+* implement recommended practices for file and folder organization in projects
+* use and apply file naming conventions
+* understand the principles of tidy data for structuring tabular data
 
 ---
 class: inverse, center, middle
@@ -89,23 +91,35 @@ class: inverse, center, middle
 
 ---
 
-# Principles for Organization
+# Principles
 
 * You don't want to spend time looking for stuff.
-  - Using a consistent system establishes habits.
-* Keep all files related to a project in a single folder.
-* Include a project README file that describes the project.
-* Separate sub-folders for raw data, processed data, code, figures.
+  - Your collaborators don't want to spend time looking for stuff either.
+  - Keep project files in a single folder.
+* Document key decisions about the project.
+  - You don't want your collaborators bugging you with easily-answered questions.
 
 ---
 
-# General Folders I have
+# Practices
+
+* Use sub-folders to organize data, figures, manuscript, etc.
+  - separate raw and processed data
+* Maintain documentation on:
+  - who did the experiments
+  - what the format is for the data
+  - when/how/why
+
+---
+
+# What Folders Do I Need?
 
 <pre class = "hljs remark-code">
 hye/
 ├── grants/
 ├── presentations_and_travel/
 ├── projects/
+├── teaching/
 ├── vitae/
 └── websites/
 </pre>
@@ -115,7 +129,7 @@ When I want to {work/apply for money/fill out forms/etc.}, I know where to start
 
 ---
 
-# Example Project in R
+# Inside a Project Folder
 
 <pre class = "hljs remark-code">
 project/
@@ -124,11 +138,31 @@ project/
 ├── output/
 ├── paper/
 ├── R/
-├── README.md
+└── README.md
 </pre>
 
 --
 * more examples in [Marwick et al. 2018 "Packaging Data Analytical Work Reproducibly Using R (and Friends)"](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986)
+
+---
+# A Project README
+
+* short summary of project & goals
+* include guidance for the most common/important task
+  - (software) how to install and run it
+  - (paper) which file is the final report/paper
+  - (data) the summary figure or main file
+* acknowledgments
+* how to cite the work
+
+---
+# Summary
+
+* for each project, store files and information together
+  - don't rely on memory!
+* make it easy to use
+  - **(avoids)** someone who would be interested not having the patience to engage
+  - someone who *needs* specific details *will* go digging for it
 
 ---
 class: inverse, center, middle
@@ -150,17 +184,19 @@ Choose file names that:
 
 <pre class = "hljs remark-code">
 Drake's FILES with spaces and punctuation.xlsx
+01.R
 figure 1.png
 fig 2.png
-report on DEC1 final FINAL HY-comments ver3.docx
+report-final FINAL HY-comments ver3.docx
 </pre>
 
 ---
 
-# Examples (GOOD)
+# Examples (BETTER)
 
 <pre class = "hljs remark-code">
-drakes-files-are-getting-better.xlsx
+drake_learned_about_underscores.xlsx
+01_import-data.R
 fig01_scatterplot_length-vs-interest.png
 fig02_histogram_talk-attendance.png
 report-on-DEC1_2020-06-01_HY-comments.docx
@@ -170,17 +206,17 @@ report-on-DEC1_2020-06-01_HY-comments.docx
 # Machine-Readable
 
 * Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
-  - different computers and filesystems struggle with these
-  - using simpler names help to remember how it's spelled
-* Use underscore `'_'` to separate grouping levels.
-* Use hyphen `'-'` to separate words within a level.
+  - computers and filesystems can struggle with these
+  - easier names help people remember, too!
+* Use underscore `'_'` between metadata groups
+* Use hyphen `'-'` between words within groups
 
 ---
 
 # Human-Readable
 
 * Use filenames that will help you find it later.
-* Use nouns for objects, use verbs for actions:
+* For code, use nouns for objects and verbs for actions:
   - e.g. `load-data.R`, `mtcars_measurements.csv`
 
 ---
@@ -189,7 +225,7 @@ report-on-DEC1_2020-06-01_HY-comments.docx
 
 * Files are usually sorted alphabetically
   - we can make use of this!
-* Left-pad with numbers to order steps in a sequence:
+* Left-pad with numbers to order files:
   - e.g. `01_load-data.R`, `02_process-data.R`
 * Use ISO-8601 for dates:
   - `YYYY-MM-DD` format (when files are sorted alphabetically, this format makes the order chronological, too!)
@@ -207,18 +243,27 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/iso_8601_2x.png")
 # Example
 
 <pre class = "hljs remark-code">
-site-A_2020-04-01_animal-count.dat
-site-A_2020-05-01_animal-count.dat
-site-B_2020-04-01_animal-count.dat
-site-B_2020-04-01_weather.dat
-site-B_2020-05-01_animal-count.dat
-site-B_2020-05-01_weather.dat
+siteA_2020-04-01_animal-count.xls
+siteA_2020-05-01_animal-count.xls
+siteB_2020-04-01_animal-count.xls
+siteB_2020-04-01_weather.dat
+siteB_2020-05-01_animal-count.xls
+siteB_2020-05-01_weather.dat
 </pre>
 
 --
 * files are organized by site
   - dates of data collection are visible
   - for a given site and date, types of measurement are clear
+
+---
+
+# Summary
+
+* you probably use names to organize files already!
+  - these tips are intended to help improve your system
+* use a consistent scheme within each folder
+  - use subfolders to help separate files with different purposes
 
 ---
 class: inverse, center, middle
@@ -231,7 +276,7 @@ class: inverse, center, middle
 
 Make it easy for anyone to work with your data:
 * Structure data for analysis (i.e. "Tidy Data")
-* Don't use spreadsheet-formatting to store data!
+* Don't use spreadsheet-text-formatting to store data!
 * Keep raw data raw
 * Include a Data Dictionary
 
@@ -257,42 +302,61 @@ Properties of *tidy data*:
 
 ---
 
-# Example (untidy data)
+# Column Labels are Values
 
-```{r prep data, include = FALSE}
-library(gapminder)
-library(dplyr)
-dat <- gapminder %>%
-  filter(country %in% c("Canada", "Chile", "Italy", "Sudan", "Thailand"),
-         year > 2000) %>%
-  select(country, continent, year, pop)
-```
-
-```{r echo = FALSE}
-dat %>% 
-  tidyr::pivot_wider(names_from = year, 
-                     values_from = pop) %>%
-  knitr::kable(format = "html")
-```
-
---
-* years of measurement as column headers
+|name|Thin Mints|Samoas|Tagalongs|
+|--|--|--|--|
+|A|4|0|0|
+|B|2|0|2|
+|c|0|3|1|
 
 ---
 
-# Examples (tidy data)
+# Column Labels Fixed
 
-```{r echo = FALSE}
-dat %>%
-  head(6) %>%
-  knitr::kable(format = "html")
-```
-
---
-* years of measurement as its own column
+|name|flavor|boxes|
+|--|--|--|
+|A|Thin Mints|4|
+|B|Thin Mints|2|
+|B|Tagalongs|2|
+|C|Samoas|3|
+|C|Tagalongs|1|
 
 ---
 
+# Multiple Observational Units
+
+|name|address|flavor|boxes|
+|--|--|--|--|
+|A|3828 Piermont Dr|Thin Mints|4|
+|B|221B Baker St|Thin Mints|2|
+|B|221B Baker St|Tagalongs|2|
+|C|124 Conch St|Samoas|3|
+|C|124 Conch St|Tagalongs|1|
+
+---
+
+# Fixed Tables
+
+.pull-left[
+|name|flavor|boxes|
+|--|--|--|
+|A|Thin Mints|4|
+|B|Thin Mints|2|
+|B|Tagalongs|2|
+|C|Samoas|3|
+|C|Tagalongs|1|
+]
+
+.pull-right[
+|name|address|
+|--|--|
+|A|3828 Piermont Dr|
+|B|221B Baker St|
+|C|124 Conch St|
+]
+
+---
 # Spreadsheet Formatting
 
 * prefer empty cells or `'NA'` for missing data
@@ -303,6 +367,15 @@ dat %>%
 * Excel LOVES to convert data into a date format
 
 ---
+# Spreadsheet Example
+
+```{r, echo = FALSE, fig.cap = "Figure 10 from Broman & Woo \"Data Organization in Spreadsheets\", showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."}
+knitr::include_graphics("spreadsheet_formatting.png")
+```
+
+Instead of highlighting the cells with outliers, encode outlier status as its own column.
+
+---
 
 # Raw Data
 
@@ -310,6 +383,7 @@ dat %>%
   - e.g. if analysis tools change (as in bioinformatics workflows)
 * document processing steps in code or text
   - someone else can see what processing was done, and reproduce it
+  - OpenRefine is a great tool for cleaning messy data (and records the steps for you)!
 
 ---
 
@@ -326,85 +400,26 @@ dat %>%
 
 ---
 
-class: inverse, center, middle
+# Example Data Dictionary
 
-# Reading Data into R
+.compact-table[
+|name|plot_name|group|description|type|
+|--|--|--|--|--|
+|mouse|Mouse|demographic|Animal identifier|text|
+|sex|Sex|demographic|Male (M) or Female (F)|factor|
+|sac_date|Date of sac|demographic|Date mouse was sacrificed|date|
+|partial_inflation|Partial inflation|clinical|Indicates if mouse showed partial pancreatic inflation|logical|
+|coat_color|Coat color|demographic|Coat color, by visual inspection|factor|
+|crumblers|Crumblers|clinical|Indicates if mouse stored food in their bedding|logical|
+|diet_days|Days on diet|clinical|Number of days on high-fat diet|numeric|
+]
 
----
-
-# Basics of R and RStudio
-
-* [R](https://cran.r-project.org/) is the programming language
-* [RStudio](https://rstudio.com/) is *optional* software that provides an interface to working in R
-  - **highly recommended** unless you have strong preferences and experience doing programming in a different environment
-  - you probably want the [free Desktop version](https://rstudio.com/products/rstudio/download/#download)
-
----
-
-# R Packages
-
-The functionality of R is extended by *packages*:
-* open-source, developed by community members
-* packages vary in scope, e.g.
-  - color themes from Wes Anderson movies
-  - tools for making interactive web applications
-
----
-
-# Ways to Get Data into R
-
-* datasets included with R and packages
-  - `data()`
-* read in data files
-  - comma-separated values (`.csv`) tables
-  - R binary formats (`.Rdata`, `.Rda`, `.RDS`)
-* directly from Google Sheets -- [`googlesheets4`](https://googlesheets4.tidyverse.org/) package
-* directly from Excel -- [`readxl`](https://readxl.tidyverse.org/) package
-
----
-
-# Demo (reading in CSV)
-
-```{r, eval = FALSE}
-url <- "https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.csv"
-download.file(url, "data/gapminder_demo.csv")
-
-dat <- read.csv("data/gapminder_demo.csv")
-```
-
----
-
-# Demo (`googlesheets4`)
-
-```{r, eval = FALSE}
-# install.packages("googlesheets4")
-library(googlesheets4)
-
-gs4_deauth() # don't authenticate, we just want to read a publicly-visible document
-
-dat <- read_sheet("https://docs.google.com/spreadsheets/d/16apE3bvGjPqyeXqWUnKgBlvGxi7GoJ4_T8OzHpYRA4k/edit?usp=sharing")
-```
-
----
-
-# Demo (`readxl`)
-
-```{r, eval = FALSE}
-url <- "https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.xlsx"
-download.file(url, "data/gapminder_demo.xlsx")
-
-# install.packages("readxl")
-library(readxl)
-
-dat <- read_excel("data/gapminder_demo.xlsx")
-```
+(modified from Figure 9 of Broman & Woo "Data Organization in Spreadsheets")
 
 ---
 
 # Thanks
 
-* Please fill out the survey!
-  - this helps me deliver content that is best for you
 * Contact me for additional questions or consultation requests!
 * Check back in on the libguide for more modules and contact info:
   - https://guides.uflib.ufl.edu/reproducibility

@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">Data Organization in Spreadsheets and R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -146,7 +146,7 @@
 <li>organizing your projects and data will:
 <ul>
 <li>improve reproducibility</li>
-<li>make the work more accessible for others <strong>including yourself at a later point!</strong>
+<li>make the work more accessible for others <strong>this includes yourself at a later point!</strong>
 </li>
 </ul>
 </li>
@@ -154,9 +154,9 @@
 </li>
 <li>Learning Outcomes
 <ul>
-<li>describe and apply principles for organizing and naming files and folders</li>
-<li>employ the concept of tidy data for structuring tabular data</li>
-<li>import and view tabular data in R</li>
+<li>implement recommended practices for file and folder organization in projects</li>
+<li>use and apply file naming conventions</li>
+<li>understand the principles of tidy data for structuring tabular data</li>
 </ul>
 </li>
 </ul>
@@ -170,35 +170,90 @@
 <ul>
 <li>You don’t want to spend time looking for stuff.
 <ul>
-<li>Using a consistent system establishes habits.</li>
+<li>Your collaborators don’t want to spend time looking for stuff either.</li>
+<li>Keep project files in a single folder.</li>
 </ul>
 </li>
-<li>Keep all files related to a project in a single folder.</li>
-<li>Include a project README file that describes the project.</li>
-<li>Separate sub-folders for raw data, processed data, code, figures.</li>
-</ul>
-</li>
-<li>
-<p>General Folders I have</p>
+<li>Document key decisions about the project.
 <ul>
-<li><code>grants/</code></li>
-<li><code>presentations_and_travel/</code></li>
-<li><code>projects/</code></li>
-<li><code>vitae/</code></li>
-<li><code>websites/</code></li>
+<li>You don’t want your collaborators bugging you with easily-answered questions.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p>Example Project in R</p>
+<p>Practices</p>
+<ul>
+<li>Use sub-folders to organize data, figures, manuscript, etc.
+<ul>
+<li>separate raw and processed data</li>
+</ul>
+</li>
+<li>Maintain documentation on:
+<ul>
+<li>who did the experiments</li>
+<li>what the format is for the data</li>
+<li>when/how/why</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What Folders Do I Need?</p>
+<pre><code>hye/
+├── grants/
+├── presentations_and_travel/
+├── projects/
+├── teaching/
+├── vitae/
+└── websites/</code></pre>
+<ul>
+<li>When I want to {work/apply for money/fill out forms/etc.}, I know where to start.</li>
+</ul>
+</li>
+<li>
+<p>Inside a Project Folder</p>
 <pre><code>project/
 ├── data/
 ├── figures/
 ├── output/
 ├── paper/
 ├── R/
-├── README.md</code></pre>
+└── README.md</code></pre>
 <ul>
 <li>more examples in <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986">Marwick et al. 2018 “Packaging Data Analytical Work Reproducibly Using R (and Friends)”</a>
+</li>
+</ul>
+</li>
+<li>
+<p>A Project README</p>
+<ul>
+<li>short summary of project &amp; goals</li>
+<li>include guidance for the most common/important task
+<ul>
+<li>(software) how to install and run it</li>
+<li>(paper) which file is the final report/paper</li>
+<li>(data) the summary figure or main file</li>
+</ul>
+</li>
+<li>acknowledgments</li>
+<li>how to cite the work</li>
+</ul>
+</li>
+<li>
+<p>Summary</p>
+<ul>
+<li>for each project, store files and information together
+<ul>
+<li>don’t rely on memory!</li>
+</ul>
+</li>
+<li>make it easy to use
+<ul>
+<li>
+<strong>(avoids)</strong> someone who would be interested not having the patience to engage</li>
+<li>someone who <em>needs</em> specific details <em>will</em> go digging for it</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -211,7 +266,7 @@
 <li>
 <p>Principles</p>
 <ul>
-<li>file names should:
+<li>Choose file names that:
 <ul>
 <li>are machine-readable</li>
 <li>are human-readable</li>
@@ -223,13 +278,15 @@
 <li>
 <p>Examples (NOT SO GOOD)</p>
 <pre><code>Drake's FILES with spaces and punctuation.xlsx
+01.R
 figure 1.png
 fig 2.png
-report on DEC1 final FINAL HY-comments ver3.docx</code></pre>
+report-final FINAL HY-comments ver3.docx</code></pre>
 </li>
 <li>
 <p>Examples (GOOD)</p>
-<pre><code>drakes-files-are-getting-better.xlsx
+<pre><code>drake_learned_about_underscores.xlsx
+01_import-data.R
 fig01_scatterplot_length-vs-interest.png
 fig02_histogram_talk-attendance.png
 report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
@@ -239,19 +296,19 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 <ul>
 <li>Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
 <ul>
-<li>different computers and filesystems struggle with these</li>
-<li>using simpler names help to remember how it’s spelled</li>
+<li>computers and filesystems can struggle with these</li>
+<li>easier names help people remember, too!</li>
 </ul>
 </li>
-<li>Use underscore <code>'_'</code> to separate grouping levels.</li>
-<li>Use hyphen <code>'-'</code> to separate words within a level.</li>
+<li>Use underscore <code>'_'</code> between metadata groups</li>
+<li>Use hyphen <code>'-'</code> between words within groups</li>
 </ul>
 </li>
 <li>
 <p>Human-Readable</p>
 <ul>
 <li>Use filenames that will help you find it later.</li>
-<li>Use nouns for objects, use verbs for actions:
+<li>For code, use nouns for objects and verbs for actions:
 <ul>
 <li>e.g. <code>load-data.R</code>, <code>mtcars_measurements.csv</code>
 </li>
@@ -267,7 +324,7 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 <li>we can make use of this!</li>
 </ul>
 </li>
-<li>Left-pad with numbers to order steps in a sequence:
+<li>Left-pad with numbers to order files:
 <ul>
 <li>e.g. <code>01_load-data.R</code>, <code>02_process-data.R</code>
 </li>
@@ -283,17 +340,32 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 </li>
 <li>
 <p>Example</p>
-<pre><code>site-A_2020-04-01_animal-count.dat
-site-A_2020-05-01_animal-count.dat
-site-B_2020-04-01_animal-count.dat
-site-B_2020-04-01_weather.dat
-site-B_2020-05-01_animal-count.dat
-site-B_2020-05-01_weather.dat</code></pre>
+<pre><code>siteA_2020-04-01_animal-count.xls
+siteA_2020-05-01_animal-count.xls
+siteB_2020-04-01_animal-count.xls
+siteB_2020-04-01_weather.dat
+siteB_2020-05-01_animal-count.xls
+siteB_2020-05-01_weather.dat</code></pre>
 <ul>
 <li>files are organized by site
 <ul>
 <li>dates of data collection are visible</li>
 <li>for a given site and date, types of measurement are clear</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Summary</p>
+<ul>
+<li>you probably use names to organize files already!
+<ul>
+<li>these tips are intended to help improve your system</li>
+</ul>
+</li>
+<li>use a consistent scheme within each folder
+<ul>
+<li>use subfolders to help separate files with different purposes</li>
 </ul>
 </li>
 </ul>
@@ -304,7 +376,8 @@ site-B_2020-05-01_weather.dat</code></pre>
 <h2 class="hasAnchor">
 <a href="#structuring-tabular-data" class="anchor"></a>Structuring Tabular Data</h2>
 <ul>
-<li>Principles
+<li>
+<p>Principles</p>
 <ul>
 <li>Make it easy for anyone to work with your data:
 <ul>
@@ -316,14 +389,16 @@ site-B_2020-05-01_weather.dat</code></pre>
 </li>
 </ul>
 </li>
-<li>Tidy Data
+<li>
+<p>Tidy Data</p>
 <ul>
 <li>each column is a variable</li>
 <li>each row is an observation</li>
 <li>each table is a single observational unit</li>
 </ul>
 </li>
-<li>Common issues
+<li>
+<p>Common issues</p>
 <ul>
 <li>data values are stored in column headers
 <ul>
@@ -339,209 +414,176 @@ site-B_2020-05-01_weather.dat</code></pre>
 </li>
 </ul>
 </li>
-<li>Example (untidy data)
-<ul>
-<li>years of measurement as column headers
-<table class="table table-striped">
-<thead class="thead-dark"><tr>
-<th style="text-align:left;">
-country
-</th>
-<th style="text-align:left;">
-continent
-</th>
-<th style="text-align:right;">
-2002
-</th>
-<th style="text-align:right;">
-2007
-</th>
+<li>
+<p>Column Labels are Values</p>
+<table>
+<thead><tr class="header">
+<th>name</th>
+<th>Thin Mints</th>
+<th>Samoas</th>
+<th>Tagalongs</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Canada
-</td>
-<td style="text-align:left;">
-Americas
-</td>
-<td style="text-align:right;">
-31902268
-</td>
-<td style="text-align:right;">
-33390141
-</td>
+<tr class="odd">
+<td>A</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Chile
-</td>
-<td style="text-align:left;">
-Americas
-</td>
-<td style="text-align:right;">
-15497046
-</td>
-<td style="text-align:right;">
-16284741
-</td>
+<tr class="even">
+<td>B</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Italy
-</td>
-<td style="text-align:left;">
-Europe
-</td>
-<td style="text-align:right;">
-57926999
-</td>
-<td style="text-align:right;">
-58147733
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sudan
-</td>
-<td style="text-align:left;">
-Africa
-</td>
-<td style="text-align:right;">
-37090298
-</td>
-<td style="text-align:right;">
-42292929
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Thailand
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-62806748
-</td>
-<td style="text-align:right;">
-65068149
-</td>
+<tr class="odd">
+<td>c</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
 </li>
-</ul>
-</li>
-<li>Examples (tidy data)
-<ul>
-<li>years of measurement as its own column
-<table class="table table-striped">
-<thead class="thead-dark"><tr>
-<th style="text-align:left;">
-country
-</th>
-<th style="text-align:left;">
-continent
-</th>
-<th style="text-align:right;">
-year
-</th>
-<th style="text-align:right;">
-pop
-</th>
+<li>
+<p>Column Labels Fixed</p>
+<table>
+<thead><tr class="header">
+<th>name</th>
+<th>flavor</th>
+<th>boxes</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Canada
-</td>
-<td style="text-align:left;">
-Americas
-</td>
-<td style="text-align:right;">
-2002
-</td>
-<td style="text-align:right;">
-31902268
-</td>
+<tr class="odd">
+<td>A</td>
+<td>Thin Mints</td>
+<td>4</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Canada
-</td>
-<td style="text-align:left;">
-Americas
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-33390141
-</td>
+<tr class="even">
+<td>B</td>
+<td>Thin Mints</td>
+<td>2</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Chile
-</td>
-<td style="text-align:left;">
-Americas
-</td>
-<td style="text-align:right;">
-2002
-</td>
-<td style="text-align:right;">
-15497046
-</td>
+<tr class="odd">
+<td>B</td>
+<td>Tagalongs</td>
+<td>2</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Chile
-</td>
-<td style="text-align:left;">
-Americas
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-16284741
-</td>
+<tr class="even">
+<td>C</td>
+<td>Samoas</td>
+<td>3</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Italy
-</td>
-<td style="text-align:left;">
-Europe
-</td>
-<td style="text-align:right;">
-2002
-</td>
-<td style="text-align:right;">
-57926999
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Italy
-</td>
-<td style="text-align:left;">
-Europe
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-58147733
-</td>
+<tr class="odd">
+<td>C</td>
+<td>Tagalongs</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
 </li>
-</ul>
+<li>
+<p>Multiple Observational Units</p>
+<table>
+<thead><tr class="header">
+<th>name</th>
+<th>address</th>
+<th>flavor</th>
+<th>boxes</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>3828 Piermont Dr</td>
+<td>Thin Mints</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>221B Baker St</td>
+<td>Thin Mints</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>221B Baker St</td>
+<td>Tagalongs</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>124 Conch St</td>
+<td>Samoas</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>124 Conch St</td>
+<td>Tagalongs</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
 </li>
-<li>Spreadsheet Formatting
+<li>
+<p>Fixed Tables</p>
+<table>
+<thead><tr class="header">
+<th>name</th>
+<th>flavor</th>
+<th>boxes</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>Thin Mints</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Thin Mints</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>Tagalongs</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>Samoas</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>Tagalongs</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead><tr class="header">
+<th>name</th>
+<th>address</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>3828 Piermont Dr</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>221B Baker St</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>124 Conch St</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Spreadsheet Formatting</p>
 <ul>
 <li>prefer empty cells or <code>'NA'</code> for missing data
 <ul>
@@ -557,7 +599,9 @@ Europe
 <li>Excel LOVES to convert data into a date format</li>
 </ul>
 </li>
-<li>Raw Data
+<li><p>Spreadsheet Example <img src="slides/spreadsheet_formatting.png" alt="Figure 10 from Broman &amp; Woo “Data Organization in Spreadsheets”, showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."></p></li>
+<li>
+<p>Raw Data</p>
 <ul>
 <li>store raw data for reproducibility
 <ul>
@@ -567,11 +611,13 @@ Europe
 <li>document processing steps in code or text
 <ul>
 <li>someone else can see what processing was done, and reproduce it</li>
+<li>OpenRefine is a great tool for cleaning messy data (and records the steps for you)!</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Data Dictionary
+<li>
+<p>Data Dictionary</p>
 <ul>
 <li>define your rows and columns are
 <ul>
@@ -589,90 +635,76 @@ Europe
 <li><a href="https://guides.uflib.ufl.edu/datamanagement/metadata">more detail on metadata</a></li>
 </ul>
 </li>
-</ul>
-</div>
-<div id="reading-data-into-r" class="section level2">
-<h2 class="hasAnchor">
-<a href="#reading-data-into-r" class="anchor"></a>Reading Data into R</h2>
-<ul>
 <li>
-<p>Basics of R and RStudio</p>
-<ul>
-<li>
-<a href="https://cran.r-project.org/">R</a> is the programming language</li>
-<li>
-<a href="https://rstudio.com/">RStudio</a> is <em>optional</em> software that provides an interface to working in R
-<ul>
-<li>
-<strong>highly recommended</strong> unless you have strong preferences and experience doing programming in a different environment</li>
-<li>you probably want the <a href="https://rstudio.com/products/rstudio/download/#download">free Desktop version</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>R Packages</p>
-<ul>
-<li>The functionality of R is extended by <em>packages</em>:</li>
-<li>open-source, developed by community members</li>
-<li>packages vary in scope, e.g.
-<ul>
-<li>color themes from Wes Anderson movies</li>
-<li>tools for making interactive web applications</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Ways to Get Data into R</p>
-<ul>
-<li>datasets included with R and packages
-<ul>
-<li><code><a href="https://rdrr.io/r/utils/data.html">data()</a></code></li>
-</ul>
-</li>
-<li>read in data files
-<ul>
-<li>comma-separated values (<code>.csv</code>) tables</li>
-<li>R binary formats (<code>.Rdata</code>, <code>.Rda</code>, <code>.RDS</code>)</li>
-</ul>
-</li>
-<li>directly from Google Sheets – <a href="https://googlesheets4.tidyverse.org/"><code>googlesheets4</code></a> package</li>
-<li>directly from Excel – <a href="https://readxl.tidyverse.org/"><code>readxl</code></a> package</li>
-</ul>
-</li>
-<li>
-<p>Demo (reading in CSV)</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">url</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.csv"</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span>(<span class="kw">url</span>, <span class="st">"data/gapminder_demo.csv"</span>)
-
-<span class="kw">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"data/gapminder_demo.csv"</span>)
-</pre></div>
-</li>
-<li>
-<p>Demo (<code>googlesheets4</code>)</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="co"># install.packages("googlesheets4")</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">googlesheets4</span>)
-
-<span class="fu">gs4_deauth</span>() <span class="co"># don't authenticate, we just want to read a publicly-visible document</span>
-
-<span class="kw">dat</span> <span class="op">&lt;-</span> <span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/16apE3bvGjPqyeXqWUnKgBlvGxi7GoJ4_T8OzHpYRA4k/edit?usp=sharing"</span>)
-</pre></div>
-</li>
-<li>
-<p>Demo (<code>readxl</code>)</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="kw">url</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.xlsx"</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span>(<span class="kw">url</span>, <span class="st">"data/gapminder_demo.xlsx"</span>)
-
-<span class="co"># install.packages("readxl")</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">readxl</span>)
-
-<span class="kw">dat</span> <span class="op">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/gapminder_demo.xlsx"</span>)
-</pre></div>
+<p>Example Data Dictionary</p>
+<table>
+<colgroup>
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+</colgroup>
+<thead><tr class="header">
+<th>name</th>
+<th>plot_name</th>
+<th>group</th>
+<th>description</th>
+<th>type</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>mouse</td>
+<td>Mouse</td>
+<td>demographic</td>
+<td>Animal identifier</td>
+<td>text</td>
+</tr>
+<tr class="even">
+<td>sex</td>
+<td>Sex</td>
+<td>demographic</td>
+<td>Male (M) or Female (F)</td>
+<td>factor</td>
+</tr>
+<tr class="odd">
+<td>sac_date</td>
+<td>Date of sac</td>
+<td>demographic</td>
+<td>Date mouse was sacrificed</td>
+<td>date</td>
+</tr>
+<tr class="even">
+<td>partial_inflation</td>
+<td>Partial inflation</td>
+<td>clinical</td>
+<td>Indicates if mouse showed partial pancreatic inflation</td>
+<td>logical</td>
+</tr>
+<tr class="odd">
+<td>coat_color</td>
+<td>Coat color</td>
+<td>demographic</td>
+<td>Coat color, by visual inspection</td>
+<td>factor</td>
+</tr>
+<tr class="even">
+<td>crumblers</td>
+<td>Crumblers</td>
+<td>clinical</td>
+<td>Indicates if mouse stored food in their bedding</td>
+<td>logical</td>
+</tr>
+<tr class="odd">
+<td>diet_days</td>
+<td>Days on diet</td>
+<td>clinical</td>
+<td>Number of days on high-fat diet</td>
+<td>numeric</td>
+</tr>
+</tbody>
+</table>
+<p>(modified from Figure 9 of Broman &amp; Woo “Data Organization in Spreadsheets”)</p>
 </li>
 </ul>
 </div>
