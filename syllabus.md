@@ -198,7 +198,7 @@
   - Excel LOVES to convert data into a date format
 
 * Spreadsheet Example
-  ![Figure 10 from Broman & Woo "Data Organization in Spreadsheets", showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column.](slides/spreadsheet_formatting.png)
+  ![Figure 10 from Broman & Woo "Data Organization in Spreadsheets", showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column.](spreadsheet_formatting.png)
 * Raw Data
   - store raw data for reproducibility
     + e.g. if analysis tools change (as in bioinformatics workflows)
