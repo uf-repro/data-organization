@@ -13,7 +13,10 @@
 
 * ["Packaging Data Analytical Work Reproducibly Using R (and Friends)"](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986)
   - paper from Ben Marwick, Carl Boettiger, and Lincoln Mullen on structuring projects as Research Compendia, with examples of varying complexity
-  
+
+* ["Foundational Practices of Research Data Management"](https://riojournal.com/article/56508/element/8/103152/)
+  - paper from Kristin A. Briney, Heather Coates, and Abigail Goven on research data management
+
 ## Tabular Data
 * ["Tidy Data"](https://www.jstatsoft.org/article/view/v059i10)
   - paper from Hadley Wickham on a framework for tabular data (see also [Chapter 12, "Tidy Data"](https://r4ds.had.co.nz/tidy-data.html) in R for Data Science)
@@ -25,17 +28,3 @@
 
 * ["Ten Simple Rules for Digital Data Storage"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
   - paper from Ted Hart et al. on principles for structuring data and data management
-
-## Importing Data into R
-
-* [Reading and Writing CSV Files](https://swcarpentry.github.io/r-novice-inflammation/11-supp-read-write-csv/)
-  - Software Carpentry's lesson on reading and writing CSV files
-
-* [RStudio's import tools](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
-  - Guide for importing data using RStudio
-
-* [googlesheets4](https://googlesheets4.tidyverse.org/)
-  - R package for interfacing with Google Sheets
-  
-* [readxl](https://readxl.tidyverse.org/)
-  - R package for interfacing with Excel files

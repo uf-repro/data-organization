@@ -12,27 +12,39 @@
   - organizing your projects and data will:
     + improve reproducibility
     + make the work more accessible for others
-    **including yourself at a later point!**
+    **this includes yourself at a later point!**
 * Learning Outcomes
-  - describe and apply principles for organizing and naming files and folders
-  - employ the concept of tidy data for structuring tabular data
-  - import and view tabular data in R
+  - implement recommended practices for file and folder organization in projects
+  - use and apply file naming conventions
+  - understand the principles of tidy data for structuring tabular data
 
 ## File and Folder Organization
 
 * Principles for Organization
   - You don't want to spend time looking for stuff.
-    + Using a consistent system establishes habits.
-  - Keep all files related to a project in a single folder.
-  - Include a project README file that describes the project.
-  - Separate sub-folders for raw data, processed data, code, figures.
-* General Folders I have
-  - `grants/`
-  - `presentations_and_travel/`
-  - `projects/`
-  - `vitae/`
-  - `websites/`
-* Example Project in R
+    + Your collaborators don't want to spend time looking for stuff either.
+    + Keep project files in a single folder.
+  - Document key decisions about the project.
+    + You don't want your collaborators bugging you with easily-answered questions.
+* Practices
+  - Use sub-folders to organize data, figures, manuscript, etc.
+    + separate raw and processed data
+  - Maintain documentation on:
+    + who did the experiments
+    + what the format is for the data
+    + when/how/why
+* What Folders Do I Need?
+  ```
+  hye/
+  ├── grants/
+  ├── presentations_and_travel/
+  ├── projects/
+  ├── teaching/
+  ├── vitae/
+  └── websites/
+  ```
+  - When I want to {work/apply for money/fill out forms/etc.}, I know where to start.
+* Inside a Project Folder
   ```  
   project/
   ├── data/
@@ -40,60 +52,81 @@
   ├── output/
   ├── paper/
   ├── R/
-  ├── README.md
+  └── README.md
   ```
   - more examples in [Marwick et al. 2018 "Packaging Data Analytical Work Reproducibly Using R (and Friends)"](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986)
+* A Project README
+  - short summary of project & goals
+  - include guidance for the most common/important task
+    + (software) how to install and run it
+    + (paper) which file is the final report/paper
+    + (data) the summary figure or main file
+  - acknowledgments
+  - how to cite the work
+* Summary
+  - for each project, store files and information together
+    + don't rely on memory!
+  - make it easy to use
+    + **(avoids)** someone who would be interested not having the patience to engage
+    + someone who *needs* specific details *will* go digging for it
 
 ## Naming Things
 
 * Principles
-  - file names should:
+  - Choose file names that:
     + are machine-readable
     + are human-readable
     + play well with default ordering
 * Examples (NOT SO GOOD)  
   ```
   Drake's FILES with spaces and punctuation.xlsx
+  01.R
   figure 1.png
   fig 2.png
-  report on DEC1 final FINAL HY-comments ver3.docx
+  report-final FINAL HY-comments ver3.docx
   ```
 * Examples (GOOD)
   ```
-  drakes-files-are-getting-better.xlsx
+  drake_learned_about_underscores.xlsx
+  01_import-data.R
   fig01_scatterplot_length-vs-interest.png
   fig02_histogram_talk-attendance.png
   report-on-DEC1_2020-06-01_HY-comments.docx
   ```
 * Machine-Readable
   - Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
-    + different computers and filesystems struggle with these
-    + using simpler names help to remember how it's spelled
-  - Use underscore `'_'` to separate grouping levels.
-  - Use hyphen `'-'` to separate words within a level.
+    + computers and filesystems can struggle with these
+    + easier names help people remember, too!
+  - Use underscore `'_'` between metadata groups
+  - Use hyphen `'-'` between words within groups
 * Human-Readable
   - Use filenames that will help you find it later.
-  - Use nouns for objects, use verbs for actions:
+  - For code, use nouns for objects and verbs for actions:
     + e.g. `load-data.R`, `mtcars_measurements.csv`
 * Using Default Ordering
   - Files are usually sorted alphabetically
     + we can make use of this!
-  - Left-pad with numbers to order steps in a sequence:
+  - Left-pad with numbers to order files:
     + e.g. `01_load-data.R`, `02_process-data.R`
   - Use ISO-8601 for dates:
     + `YYYY-MM-DD` format (when files are sorted alphabetically, this format makes the order chronological, too!)
 * Example
   ```
-  site-A_2020-04-01_animal-count.dat
-  site-A_2020-05-01_animal-count.dat
-  site-B_2020-04-01_animal-count.dat
-  site-B_2020-04-01_weather.dat
-  site-B_2020-05-01_animal-count.dat
-  site-B_2020-05-01_weather.dat
+  siteA_2020-04-01_animal-count.xls
+  siteA_2020-05-01_animal-count.xls
+  siteB_2020-04-01_animal-count.xls
+  siteB_2020-04-01_weather.dat
+  siteB_2020-05-01_animal-count.xls
+  siteB_2020-05-01_weather.dat
   ```
   - files are organized by site
     + dates of data collection are visible
     + for a given site and date, types of measurement are clear
+* Summary
+  - you probably use names to organize files already!
+    + these tips are intended to help improve your system
+  - use a consistent scheme within each folder
+    + use subfolders to help separate files with different purposes
     
 ## Structuring Tabular Data
 
@@ -114,101 +147,47 @@
   - some variables are stored in rows in addition to columns
   - "1 observational unit = 1 table" is violated
     + e.g. subject info and samples are stored in one table instead of separate tables with shared identifiers
-* Example (untidy data)
-  - years of measurement as column headers
-  <table class="table table-striped">
- <thead class="thead-dark">
-  <tr>
-   <th style="text-align:left;"> country </th>
-   <th style="text-align:left;"> continent </th>
-   <th style="text-align:right;"> 2002 </th>
-   <th style="text-align:right;"> 2007 </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Canada </td>
-   <td style="text-align:left;"> Americas </td>
-   <td style="text-align:right;"> 31902268 </td>
-   <td style="text-align:right;"> 33390141 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Chile </td>
-   <td style="text-align:left;"> Americas </td>
-   <td style="text-align:right;"> 15497046 </td>
-   <td style="text-align:right;"> 16284741 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Italy </td>
-   <td style="text-align:left;"> Europe </td>
-   <td style="text-align:right;"> 57926999 </td>
-   <td style="text-align:right;"> 58147733 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Sudan </td>
-   <td style="text-align:left;"> Africa </td>
-   <td style="text-align:right;"> 37090298 </td>
-   <td style="text-align:right;"> 42292929 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Thailand </td>
-   <td style="text-align:left;"> Asia </td>
-   <td style="text-align:right;"> 62806748 </td>
-   <td style="text-align:right;"> 65068149 </td>
-  </tr>
-</tbody>
-</table>
+* Column Labels are Values
 
-* Examples (tidy data)
-  - years of measurement as its own column
-  <table class="table table-striped">
- <thead class="thead-dark">
-  <tr>
-   <th style="text-align:left;"> country </th>
-   <th style="text-align:left;"> continent </th>
-   <th style="text-align:right;"> year </th>
-   <th style="text-align:right;"> pop </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Canada </td>
-   <td style="text-align:left;"> Americas </td>
-   <td style="text-align:right;"> 2002 </td>
-   <td style="text-align:right;"> 31902268 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Canada </td>
-   <td style="text-align:left;"> Americas </td>
-   <td style="text-align:right;"> 2007 </td>
-   <td style="text-align:right;"> 33390141 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Chile </td>
-   <td style="text-align:left;"> Americas </td>
-   <td style="text-align:right;"> 2002 </td>
-   <td style="text-align:right;"> 15497046 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Chile </td>
-   <td style="text-align:left;"> Americas </td>
-   <td style="text-align:right;"> 2007 </td>
-   <td style="text-align:right;"> 16284741 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Italy </td>
-   <td style="text-align:left;"> Europe </td>
-   <td style="text-align:right;"> 2002 </td>
-   <td style="text-align:right;"> 57926999 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Italy </td>
-   <td style="text-align:left;"> Europe </td>
-   <td style="text-align:right;"> 2007 </td>
-   <td style="text-align:right;"> 58147733 </td>
-  </tr>
-</tbody>
-</table>
+  |name|Thin Mints|Samoas|Tagalongs|
+  |--|--|--|--|
+  |A|4|0|0|
+  |B|2|0|2|
+  |c|0|3|1|
+* Column Labels Fixed
+
+  |name|flavor|boxes|
+  |--|--|--|
+  |A|Thin Mints|4|
+  |B|Thin Mints|2|
+  |B|Tagalongs|2|
+  |C|Samoas|3|
+  |C|Tagalongs|1|
+* Multiple Observational Units
+
+  |name|address|flavor|boxes|
+  |--|--|--|--|
+  |A|3828 Piermont Dr|Thin Mints|4|
+  |B|221B Baker St|Thin Mints|2|
+  |B|221B Baker St|Tagalongs|2|
+  |C|124 Conch St|Samoas|3|
+  |C|124 Conch St|Tagalongs|1|
+
+* Fixed Tables
+
+  |name|flavor|boxes|
+  |--|--|--|
+  |A|Thin Mints|4|
+  |B|Thin Mints|2|
+  |B|Tagalongs|2|
+  |C|Samoas|3|
+  |C|Tagalongs|1|
+
+  |name|address|
+  |--|--|
+  |A|3828 Piermont Dr|
+  |B|221B Baker St|
+  |C|124 Conch St|
 
 * Spreadsheet Formatting
   - prefer empty cells or `'NA'` for missing data
@@ -218,11 +197,14 @@
     + conditional formatting can help visualize
   - Excel LOVES to convert data into a date format
 
+* Spreadsheet Example
+  ![Figure 10 from Broman & Woo "Data Organization in Spreadsheets", showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column.](slides/spreadsheet_formatting.png)
 * Raw Data
   - store raw data for reproducibility
     + e.g. if analysis tools change (as in bioinformatics workflows)
   - document processing steps in code or text
     + someone else can see what processing was done, and reproduce it
+    + OpenRefine is a great tool for cleaning messy data (and records the steps for you)!
 * Data Dictionary
   - define your rows and columns are
     + e.g. do rows correspond to:
@@ -232,54 +214,19 @@
   - define codes, categories, acronyms
   - define relationships between multiple tables
   - [more detail on metadata](https://guides.uflib.ufl.edu/datamanagement/metadata)
+* Example Data Dictionary
 
-## Reading Data into R
+  |name|plot_name|group|description|type|
+  |--|--|--|--|--|
+  |mouse|Mouse|demographic|Animal identifier|text|
+  |sex|Sex|demographic|Male (M) or Female (F)|factor|
+  |sac_date|Date of sac|demographic|Date mouse was sacrificed|date|
+  |partial_inflation|Partial inflation|clinical|Indicates if mouse showed partial pancreatic inflation|logical|
+  |coat_color|Coat color|demographic|Coat color, by visual inspection|factor|
+  |crumblers|Crumblers|clinical|Indicates if mouse stored food in their bedding|logical|
+  |diet_days|Days on diet|clinical|Number of days on high-fat diet|numeric|
 
-* Basics of R and RStudio
-  - [R](https://cran.r-project.org/) is the programming language
-  - [RStudio](https://rstudio.com/) is *optional* software that provides an interface to working in R
-    + **highly recommended** unless you have strong preferences and experience doing programming in a different environment
-    + you probably want the [free Desktop version](https://rstudio.com/products/rstudio/download/#download)
-* R Packages
-  - The functionality of R is extended by *packages*:
-  - open-source, developed by community members
-  - packages vary in scope, e.g.
-    + color themes from Wes Anderson movies
-    + tools for making interactive web applications
-* Ways to Get Data into R
-  - datasets included with R and packages
-    + `data()`
-  - read in data files
-    + comma-separated values (`.csv`) tables
-    + R binary formats (`.Rdata`, `.Rda`, `.RDS`)
-  - directly from Google Sheets -- [`googlesheets4`](https://googlesheets4.tidyverse.org/) package
-  - directly from Excel -- [`readxl`](https://readxl.tidyverse.org/) package
-* Demo (reading in CSV)
-  ```r
-  url <- "https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.csv"
-  download.file(url, "data/gapminder_demo.csv")
-  
-  dat <- read.csv("data/gapminder_demo.csv")
-  ```
-* Demo (`googlesheets4`)
-  ```r
-  # install.packages("googlesheets4")
-  library(googlesheets4)
-  
-  gs4_deauth() # don't authenticate, we just want to read a publicly-visible document
-  
-  dat <- read_sheet("https://docs.google.com/spreadsheets/d/16apE3bvGjPqyeXqWUnKgBlvGxi7GoJ4_T8OzHpYRA4k/edit?usp=sharing")
-  ```
-* Demo (`readxl`)
-  ```r
-  url <- "https://raw.githubusercontent.com/uf-repro/data-organization/master/data/gapminder_demo.xlsx"
-  download.file(url, "data/gapminder_demo.xlsx")
-  
-  # install.packages("readxl")
-  library(readxl)
-  
-  dat <- read_excel("data/gapminder_demo.xlsx")
-  ```
+  (modified from Figure 9 of Broman & Woo "Data Organization in Spreadsheets")
 
 ## Thanks
 * Contact me for additional questions or consultation requests!

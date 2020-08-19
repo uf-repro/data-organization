@@ -1,5 +1,5 @@
 {
-"title": "Data Organization in Spreadsheets and R",
+"title": "Data Organization in Spreadsheets",
 "creators": [
     {
       "affiliation": "University of Florida",
@@ -7,7 +7,7 @@
       "orcid": "0000-0002-8630-1458"
     }
 ],
-    "description": "This workshop will introduce practices for organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of your choice. Attendees will leave with understanding of the general principles for file & folder management, tidy data, and software tools for basic data wrangling.",
+    "description": "This workshop guides researchers on organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of their choice. Attendees will gain an understanding of the principles and practices in project organization, file naming, and structuring tidy data.",
     "keywords": [
     "Open Educational Resources", 
     "Research Support Skills", 
@@ -18,5 +18,5 @@
   ],
     "access_right": "open",
     "license": "CC-BY-4.0",
-    "upload_type": "Lesson"
+    "upload_type": "lesson"
 }
