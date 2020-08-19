@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 [![GitHub Actions pkgdown workflow](https://github.com/uf-repro/data-organization/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/data-organization/actions?query=workflow%3Apkgdown)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3892184.svg)](https://doi.org/10.5281/zenodo.3892184)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3892183.svg)](https://doi.org/10.5281/zenodo.3892183)
 <!-- badges: end -->
 
 ## Description
