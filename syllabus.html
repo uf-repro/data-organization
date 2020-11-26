@@ -124,14 +124,13 @@
 
 <div id="syllabus" class="section level1">
 
+<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2020-11-26)</p>
 <div id="intro" class="section level2">
 <h2 class="hasAnchor">
 <a href="#intro" class="anchor"></a>Intro</h2>
 <ul>
-<li>Goals
+<li>Goals The goal of this workshop is to provide <em>practical</em> advice for research projects:
 <ul>
-<li>
-<em>practical</em> advice for research projects:</li>
 <li>you can use these tips now</li>
 <li>concepts and skills will scale to:
 <ul>
@@ -141,18 +140,18 @@
 </li>
 </ul>
 </li>
-<li>Motivations
+<li>Motivations Why should you care about this topic? –
 <ul>
 <li>organizing your projects and data will:
 <ul>
 <li>improve reproducibility</li>
-<li>make the work more accessible for others <strong>this includes yourself at a later point!</strong>
-</li>
+<li><h2 id="make-the-work-more-accessible-for-others">make the work more accessible for others</h2></li>
+<li><strong>this includes yourself at a later point!</strong></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Learning Outcomes
+<li>Learning Outcomes By the end of the workshop, participants will be able to:
 <ul>
 <li>implement recommended practices for file and folder organization in projects</li>
 <li>use and apply file naming conventions</li>
@@ -165,8 +164,7 @@
 <h2 class="hasAnchor">
 <a href="#file-and-folder-organization" class="anchor"></a>File and Folder Organization</h2>
 <ul>
-<li>
-<p>Principles for Organization</p>
+<li>Principles
 <ul>
 <li>You don’t want to spend time looking for stuff.
 <ul>
@@ -181,8 +179,7 @@
 </li>
 </ul>
 </li>
-<li>
-<p>Practices</p>
+<li>Practices
 <ul>
 <li>Use sub-folders to organize data, figures, manuscript, etc.
 <ul>
@@ -198,35 +195,34 @@
 </li>
 </ul>
 </li>
-<li>
-<p>What Folders Do I Need?</p>
-<pre><code>hye/
+<li>What Folders Do I Need?
+<pre class="hljs remark-code">
+hye/
 ├── grants/
 ├── presentations_and_travel/
 ├── projects/
 ├── teaching/
 ├── vitae/
-└── websites/</code></pre>
-<ul>
-<li>When I want to {work/apply for money/fill out forms/etc.}, I know where to start.</li>
-</ul>
-</li>
-<li>
-<p>Inside a Project Folder</p>
-<pre><code>project/
+└── websites/
+</pre>
+– When I want to {work/apply for money/fill out forms/etc.}, I know where to start.</li>
+<li>Inside a Project Folder
+<pre class="hljs remark-code">
+project/
 ├── data/
 ├── figures/
 ├── output/
 ├── paper/
 ├── R/
-└── README.md</code></pre>
+└── README.md
+</pre>
+–
 <ul>
 <li>more examples in <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986">Marwick et al. 2018 “Packaging Data Analytical Work Reproducibly Using R (and Friends)”</a>
 </li>
 </ul>
 </li>
-<li>
-<p>A Project README</p>
+<li>A Project README
 <ul>
 <li>short summary of project &amp; goals</li>
 <li>include guidance for the most common/important task
@@ -240,8 +236,7 @@
 <li>how to cite the work</li>
 </ul>
 </li>
-<li>
-<p>Summary</p>
+<li>Summary
 <ul>
 <li>for each project, store files and information together
 <ul>
@@ -263,36 +258,32 @@
 <h2 class="hasAnchor">
 <a href="#naming-things" class="anchor"></a>Naming Things</h2>
 <ul>
-<li>
-<p>Principles</p>
-<ul>
-<li>Choose file names that:
+<li>Principles Choose file names that:
 <ul>
 <li>are machine-readable</li>
 <li>are human-readable</li>
 <li>play well with default ordering</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<p>Examples (NOT SO GOOD)</p>
-<pre><code>Drake's FILES with spaces and punctuation.xlsx
+<li>Examples (NOT SO GOOD)
+<pre class="hljs remark-code">
+Drake's FILES with spaces and punctuation.xlsx
 01.R
 figure 1.png
 fig 2.png
-report-final FINAL HY-comments ver3.docx</code></pre>
+report-final FINAL HY-comments ver3.docx
+</pre>
 </li>
-<li>
-<p>Examples (GOOD)</p>
-<pre><code>drake_learned_about_underscores.xlsx
+<li>Examples (BETTER)
+<pre class="hljs remark-code">
+drake_learned_about_underscores.xlsx
 01_import-data.R
 fig01_scatterplot_length-vs-interest.png
 fig02_histogram_talk-attendance.png
-report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
+report-on-DEC1_2020-06-01_HY-comments.docx
+</pre>
 </li>
-<li>
-<p>Machine-Readable</p>
+<li>Machine-Readable
 <ul>
 <li>Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
 <ul>
@@ -304,8 +295,7 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 <li>Use hyphen <code>'-'</code> between words within groups</li>
 </ul>
 </li>
-<li>
-<p>Human-Readable</p>
+<li>Human-Readable
 <ul>
 <li>Use filenames that will help you find it later.</li>
 <li>For code, use nouns for objects and verbs for actions:
@@ -316,8 +306,7 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 </li>
 </ul>
 </li>
-<li>
-<p>Using Default Ordering</p>
+<li>Using Default Ordering
 <ul>
 <li>Files are usually sorted alphabetically
 <ul>
@@ -333,19 +322,22 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 <li>Use ISO-8601 for dates:
 <ul>
 <li>
-<code>YYYY-MM-DD</code> format (when files are sorted alphabetically, this format makes the order chronological, too!)</li>
-</ul>
+<code>YYYY-MM-DD</code> format (when files are sorted alphabetically, this format makes the order chronological, too!) <img src="https://imgs.xkcd.com/comics/iso_8601_2x.png" width="60%"><a href="https://xkcd.com/1179/">xkcd/1179</a>
 </li>
 </ul>
 </li>
-<li>
-<p>Example</p>
-<pre><code>siteA_2020-04-01_animal-count.xls
+</ul>
+</li>
+<li>Example
+<pre class="hljs remark-code">
+siteA_2020-04-01_animal-count.xls
 siteA_2020-05-01_animal-count.xls
 siteB_2020-04-01_animal-count.xls
 siteB_2020-04-01_weather.dat
 siteB_2020-05-01_animal-count.xls
-siteB_2020-05-01_weather.dat</code></pre>
+siteB_2020-05-01_weather.dat
+</pre>
+–
 <ul>
 <li>files are organized by site
 <ul>
@@ -355,8 +347,7 @@ siteB_2020-05-01_weather.dat</code></pre>
 </li>
 </ul>
 </li>
-<li>
-<p>Summary</p>
+<li>Summary
 <ul>
 <li>you probably use names to organize files already!
 <ul>
@@ -376,29 +367,22 @@ siteB_2020-05-01_weather.dat</code></pre>
 <h2 class="hasAnchor">
 <a href="#structuring-tabular-data" class="anchor"></a>Structuring Tabular Data</h2>
 <ul>
-<li>
-<p>Principles</p>
-<ul>
-<li>Make it easy for anyone to work with your data:
+<li>Principles Make it easy for anyone to work with your data:
 <ul>
 <li>Structure data for analysis (i.e. “Tidy Data”)</li>
-<li>Don’t use spreadsheet-formatting to store data!</li>
+<li>Don’t use spreadsheet-text-formatting to store data!</li>
 <li>Keep raw data raw</li>
 <li>Include a Data Dictionary</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<p>Tidy Data</p>
+<li>Tidy Data Properties of <em>tidy data</em>:
 <ul>
 <li>each column is a variable</li>
 <li>each row is an observation</li>
 <li>each table is a single observational unit</li>
 </ul>
 </li>
-<li>
-<p>Common issues</p>
+<li>Common issues
 <ul>
 <li>data values are stored in column headers
 <ul>
@@ -414,176 +398,11 @@ siteB_2020-05-01_weather.dat</code></pre>
 </li>
 </ul>
 </li>
-<li>
-<p>Column Labels are Values</p>
-<table>
-<thead><tr class="header">
-<th>name</th>
-<th>Thin Mints</th>
-<th>Samoas</th>
-<th>Tagalongs</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>A</td>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td>2</td>
-<td>0</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>c</td>
-<td>0</td>
-<td>3</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Column Labels Fixed</p>
-<table>
-<thead><tr class="header">
-<th>name</th>
-<th>flavor</th>
-<th>boxes</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>A</td>
-<td>Thin Mints</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td>Thin Mints</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>B</td>
-<td>Tagalongs</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>C</td>
-<td>Samoas</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td>Tagalongs</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Multiple Observational Units</p>
-<table>
-<thead><tr class="header">
-<th>name</th>
-<th>address</th>
-<th>flavor</th>
-<th>boxes</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>A</td>
-<td>3828 Piermont Dr</td>
-<td>Thin Mints</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td>221B Baker St</td>
-<td>Thin Mints</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>B</td>
-<td>221B Baker St</td>
-<td>Tagalongs</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>C</td>
-<td>124 Conch St</td>
-<td>Samoas</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td>124 Conch St</td>
-<td>Tagalongs</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Fixed Tables</p>
-<table>
-<thead><tr class="header">
-<th>name</th>
-<th>flavor</th>
-<th>boxes</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>A</td>
-<td>Thin Mints</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td>Thin Mints</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>B</td>
-<td>Tagalongs</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>C</td>
-<td>Samoas</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td>Tagalongs</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead><tr class="header">
-<th>name</th>
-<th>address</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>A</td>
-<td>3828 Piermont Dr</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td>221B Baker St</td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td>124 Conch St</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Spreadsheet Formatting</p>
+<li>Column Labels are Values |name|Thin Mints|Samoas|Tagalongs| |–|–|–|–| |A|4|0|0| |B|2|0|2| |c|0|3|1|</li>
+<li>Column Labels Fixed |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|</li>
+<li>Multiple Observational Units |name|address|flavor|boxes| |–|–|–|–| |A|3828 Piermont Dr|Thin Mints|4| |B|221B Baker St|Thin Mints|2| |B|221B Baker St|Tagalongs|2| |C|124 Conch St|Samoas|3| |C|124 Conch St|Tagalongs|1|</li>
+<li>Fixed Tables .pull-left[ |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|] .pull-right[ |name|address| |–|–| |A|3828 Piermont Dr| |B|221B Baker St| |C|124 Conch St|]</li>
+<li>Spreadsheet Formatting
 <ul>
 <li>prefer empty cells or <code>'NA'</code> for missing data
 <ul>
@@ -599,9 +418,8 @@ siteB_2020-05-01_weather.dat</code></pre>
 <li>Excel LOVES to convert data into a date format</li>
 </ul>
 </li>
-<li><p>Spreadsheet Example <img src="spreadsheet_formatting.png" alt="Figure 10 from Broman &amp; Woo “Data Organization in Spreadsheets”, showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."></p></li>
-<li>
-<p>Raw Data</p>
+<li>Spreadsheet Example <img src="spreadsheet_formatting.png" alt="Figure 10 from Broman &amp; Woo “Data Organization in Spreadsheets”, showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."> Instead of highlighting the cells with outliers, encode outlier status as its own column.</li>
+<li>Raw Data
 <ul>
 <li>store raw data for reproducibility
 <ul>
@@ -616,8 +434,7 @@ siteB_2020-05-01_weather.dat</code></pre>
 </li>
 </ul>
 </li>
-<li>
-<p>Data Dictionary</p>
+<li>Data Dictionary
 <ul>
 <li>define your rows and columns are
 <ul>
@@ -635,77 +452,7 @@ siteB_2020-05-01_weather.dat</code></pre>
 <li><a href="https://guides.uflib.ufl.edu/datamanagement/metadata">more detail on metadata</a></li>
 </ul>
 </li>
-<li>
-<p>Example Data Dictionary</p>
-<table>
-<colgroup>
-<col width="20%">
-<col width="20%">
-<col width="20%">
-<col width="20%">
-<col width="20%">
-</colgroup>
-<thead><tr class="header">
-<th>name</th>
-<th>plot_name</th>
-<th>group</th>
-<th>description</th>
-<th>type</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>mouse</td>
-<td>Mouse</td>
-<td>demographic</td>
-<td>Animal identifier</td>
-<td>text</td>
-</tr>
-<tr class="even">
-<td>sex</td>
-<td>Sex</td>
-<td>demographic</td>
-<td>Male (M) or Female (F)</td>
-<td>factor</td>
-</tr>
-<tr class="odd">
-<td>sac_date</td>
-<td>Date of sac</td>
-<td>demographic</td>
-<td>Date mouse was sacrificed</td>
-<td>date</td>
-</tr>
-<tr class="even">
-<td>partial_inflation</td>
-<td>Partial inflation</td>
-<td>clinical</td>
-<td>Indicates if mouse showed partial pancreatic inflation</td>
-<td>logical</td>
-</tr>
-<tr class="odd">
-<td>coat_color</td>
-<td>Coat color</td>
-<td>demographic</td>
-<td>Coat color, by visual inspection</td>
-<td>factor</td>
-</tr>
-<tr class="even">
-<td>crumblers</td>
-<td>Crumblers</td>
-<td>clinical</td>
-<td>Indicates if mouse stored food in their bedding</td>
-<td>logical</td>
-</tr>
-<tr class="odd">
-<td>diet_days</td>
-<td>Days on diet</td>
-<td>clinical</td>
-<td>Number of days on high-fat diet</td>
-<td>numeric</td>
-</tr>
-</tbody>
-</table>
-<p>(modified from Figure 9 of Broman &amp; Woo “Data Organization in Spreadsheets”)</p>
-</li>
+<li>Example Data Dictionary .compact-table[ |name|plot_name|group|description|type| |–|–|–|–|–| |mouse|Mouse|demographic|Animal identifier|text| |sex|Sex|demographic|Male (M) or Female (F)|factor| |sac_date|Date of sac|demographic|Date mouse was sacrificed|date| |partial_inflation|Partial inflation|clinical|Indicates if mouse showed partial pancreatic inflation|logical| |coat_color|Coat color|demographic|Coat color, by visual inspection|factor| |crumblers|Crumblers|clinical|Indicates if mouse stored food in their bedding|logical| |diet_days|Days on diet|clinical|Number of days on high-fat diet|numeric|] (modified from Figure 9 of Broman &amp; Woo “Data Organization in Spreadsheets”)</li>
 </ul>
 </div>
 <div id="thanks" class="section level2">
