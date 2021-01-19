@@ -17,18 +17,7 @@ class: inverse, center, middle
 # Data Organization in Spreadsheets
 ### Hao Ye
 ### Health Science Center Libraries, University of Florida
-### (updated: 2020-11-26)
-
----
-
-# Goals
-
-The goal of this workshop is to provide *practical* advice for research projects:
-
-* you can use these tips now
-* concepts and skills will scale to:
-  - more complex projects
-  - more collaborators
+### (updated: 2021-01-19)
 
 ---
 
@@ -38,11 +27,13 @@ Why should you care about this topic?
 
 --
 
-* organizing your projects and data will:
-  - improve reproducibility
-  - make the work more accessible for others
+Organizing your projects and data will:
+* improve reproducibility
+* facilitate scaling up of projects
+* make it easier for anyone to build off it later
 --
-  - **this includes yourself at a later point!**
+
+  **this includes yourself at a later point!**
 
 ---
 
@@ -50,7 +41,7 @@ Why should you care about this topic?
 
 By the end of the workshop, participants will be able to:
 
-* implement recommended practices for file and folder organization in projects
+* better organize file and folders for research projects
 * use and apply file naming conventions
 * understand the principles of tidy data for structuring tabular data
 
@@ -64,11 +55,10 @@ class: inverse, center, middle
 # Principles
 
 * You don't want to spend time looking for stuff.
-  - Your collaborators don't want to spend time looking for stuff either.
-  - Keep project files in a single folder.
+  The same is true for your collaborators.
+  - Keep all files associated with a project in **one** place.
 * Document key decisions about the project.
-  - You don't want your collaborators bugging you with easily-answered questions.
-
+  - Anyone with access to the project folder should be able to access information about data, results, etc.
 ---
 
 # Practices
@@ -77,29 +67,13 @@ class: inverse, center, middle
   - separate raw and processed data
 * Maintain documentation on:
   - who did the experiments
-  - what the format is for the data
+  - the formatting of the data
+    (more on this later)
   - when/how/why
 
----
+----
 
-# What Folders Do I Need?
-
-&lt;pre class = "hljs remark-code"&gt;
-hye/
-├── grants/
-├── presentations_and_travel/
-├── projects/
-├── teaching/
-├── vitae/
-└── websites/
-&lt;/pre&gt;
-
---
-When I want to {work/apply for money/fill out forms/etc.}, I know where to start.
-
----
-
-# Inside a Project Folder
+# Structuring a Project Folder
 
 &lt;pre class = "hljs remark-code"&gt;
 project/
@@ -126,14 +100,31 @@ project/
 * how to cite the work
 
 ---
+
+# Higher-level organization
+
+I group project folders based on task:
+
+&lt;pre class = "hljs remark-code"&gt;
+hye/
+├── grants/
+├── presentations_and_travel/
+├── projects/
+├── teaching/
+├── vitae/
+└── websites/
+&lt;/pre&gt;
+--
+* easier to copy-paste from existing projects
+
+---
 # Summary
 
-* for each project, store files and information together
+* for individual project, store files and **information** in the same place
   - don't rely on memory!
-* make it easy to use
-  - **(avoids)** someone who would be interested not having the patience to engage
-  - someone who *needs* specific details *will* go digging for it
-
+* make the project easy to navigate and engage with:
+  - if someone is looking for details, they know where to look
+  
 ---
 class: inverse, center, middle
 
@@ -153,10 +144,10 @@ Choose file names that:
 # Examples (NOT SO GOOD)
 
 &lt;pre class = "hljs remark-code"&gt;
-Drake's FILES with spaces and punctuation.xlsx
+Hao's data with spaces &amp; punctuation.xlsx
 01.R
 figure 1.png
-fig 2.png
+fig 2.jpg
 report-final FINAL HY-comments ver3.docx
 &lt;/pre&gt;
 
@@ -165,11 +156,11 @@ report-final FINAL HY-comments ver3.docx
 # Examples (BETTER)
 
 &lt;pre class = "hljs remark-code"&gt;
-drake_learned_about_underscores.xlsx
+hao_learned_about_underscores.xlsx
 01_import-data.R
 fig01_scatterplot_length-vs-interest.png
 fig02_histogram_talk-attendance.png
-report-on-DEC1_2020-06-01_HY-comments.docx
+yearly-report_2020-06-01_hy-comments.docx
 &lt;/pre&gt;
 
 ---
@@ -178,27 +169,29 @@ report-on-DEC1_2020-06-01_HY-comments.docx
 * Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
   - computers and filesystems can struggle with these
   - easier names help people remember, too!
-* Use underscore `'_'` between metadata groups
-* Use hyphen `'-'` between words within groups
+* Separate words with hyphens `'-'`
+* Separate metadata groups with underscores `'_'`
 
 ---
 
 # Human-Readable
 
 * Use filenames that will help you find it later.
-* For code, use nouns for objects and verbs for actions:
-  - e.g. `load-data.R`, `mtcars_measurements.csv`
+* For code, use nouns for data objects and verbs for actions:
+  - `load-data.R`
+  - `mtcars_measurements.csv`
+  - `make-scatterplot.R`
 
 ---
 
 # Using Default Ordering
 
-* Files are usually sorted alphabetically
+* Computers like to sort files alphabetically:
   - we can make use of this!
-* Left-pad with numbers to order files:
+* Left-pad with numbers to impose an order on files:
   - e.g. `01_load-data.R`, `02_process-data.R`
 * Use ISO-8601 for dates:
-  - `YYYY-MM-DD` format (when files are sorted alphabetically, this format makes the order chronological, too!)
+  - `YYYY-MM-DD` format (alphabetical sorting makes it chronological, too!)
 
 ---
 class: center
@@ -229,9 +222,8 @@ siteB_2020-05-01_weather.dat
 # Summary
 
 * you probably use names to organize files already!
-  - these tips are intended to help improve your system
-* use a consistent scheme within each folder
-  - use subfolders to help separate files with different purposes
+  - these tips can help improve your system
+* use a consistent scheme for labeling
 
 ---
 class: inverse, center, middle
@@ -244,8 +236,8 @@ class: inverse, center, middle
 
 Make it easy for anyone to work with your data:
 * Structure data for analysis (i.e. "Tidy Data")
-* Don't use spreadsheet-text-formatting to store data!
-* Keep raw data raw
+* Don't use text-formatting to store information!
+* Don't modify raw data
 * Include a Data Dictionary
 
 ---
@@ -266,7 +258,7 @@ Properties of *tidy data*:
 * multiple variables are stored in one column
 * some variables are stored in rows in addition to columns
 * "1 observational unit = 1 table" is violated
-  - e.g. subject info and samples are stored in one table instead of separate tables with shared identifiers
+  - e.g. subject info and samples are stored in one table
 
 ---
 
@@ -331,7 +323,6 @@ Properties of *tidy data*:
   - *be careful about `'NA'` for certain types of data (e.g. country code for "Namibia")*
 * do NOT space out data with empty rows/columns
 * do NOT use text formatting (e.g. bold/italics) to store information
-  - conditional formatting can help visualize
 * Excel LOVES to convert data into a date format
 
 ---
@@ -346,7 +337,8 @@ Instead of highlighting the cells with outliers, encode outlier status as its ow
 # Raw Data
 
 * store raw data for reproducibility
-  - e.g. if analysis tools change (as in bioinformatics workflows)
+  - copy and modify files instead
+  - and/or use scripts to clean/wrangle raw data
 * document processing steps in code or text
   - someone else can see what processing was done, and reproduce it
   - OpenRefine is a great tool for cleaning messy data (and records the steps for you)!
