@@ -29,7 +29,7 @@ navbar:
        icon: fas fa-home fa-lg
        href: index.html
      notes:
-       text: notes
+       text: Notes
        href: notes.html
      slides:
        text: Slides

@@ -28,3 +28,6 @@
 
 * ["Ten Simple Rules for Digital Data Storage"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
   - paper from Ted Hart et al. on principles for structuring data and data management
+
+* ["Spreadsheet Munging Strategies"](https://nacnudus.github.io/spreadsheet-munging-strategies/)
+  - gitbook from Duncan Garmonsway on how to "munge" data that is NOT stored in a tidy spreadsheet
