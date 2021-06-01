@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">Data Organization in Spreadsheets and R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.2</span>
       </span>
     </div>
 
@@ -130,7 +130,7 @@
 
 <div id="syllabus" class="section level1">
 
-<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2021-05-10)</p>
+<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2021-06-01)</p>
 <div id="intro" class="section level2">
 <h2 class="hasAnchor">
 <a href="#intro" class="anchor" aria-hidden="true"></a>Intro</h2>
@@ -138,8 +138,8 @@
 <li>Motivations Why should you care about this topic? Organizing your projects and data will:
 <ul>
 <li>improve reproducibility</li>
-<li>facilitate scaling up of projects</li>
-<li>make it easier for anyone to build off it later <strong>this includes yourself at a later point!</strong>
+<li>enable you to scale up projects</li>
+<li>make it easier to build off it later <strong>this includes yourself at a later point!</strong>
 </li>
 </ul>
 </li>
@@ -158,14 +158,14 @@
 <ul>
 <li>Principles
 <ul>
-<li>You don’t want to spend time looking for stuff. The same is true for your collaborators.
+<li>You don’t want to spend time looking for stuff. Neither do your collaborators.</li>
+<li>Keep all files associated with a project in <strong>one</strong> place.
 <ul>
-<li>Keep all files associated with a project in <strong>one</strong> place.</li>
-</ul>
-</li>
-<li>Document key decisions about the project.
-<ul>
-<li>Anyone with access to the project folder should be able to access information about data, results, etc.</li>
+<li>project description</li>
+<li>data</li>
+<li>code</li>
+<li>figures</li>
+<li>manuscript</li>
 </ul>
 </li>
 </ul>
@@ -177,10 +177,10 @@
 <li>separate raw and processed data</li>
 </ul>
 </li>
-<li>Maintain documentation on:
+<li>Use <code>README</code> files to document:
 <ul>
 <li>who did the experiments</li>
-<li>the formatting of the data (more on this later)</li>
+<li>data formatting (more on this later)</li>
 <li>when/how/why</li>
 </ul>
 </li>
@@ -204,18 +204,18 @@ project/
 <li>A Project README
 <ul>
 <li>short summary of project &amp; goals</li>
-<li>include guidance for the most common/important task
+<li>guidance for interacting with the project
 <ul>
 <li>(software) how to install and run it</li>
 <li>(paper) which file is the final report/paper</li>
 <li>(data) the summary figure or main file</li>
 </ul>
 </li>
-<li>acknowledgments</li>
-<li>how to cite the work</li>
+<li>description of folders (if non-standard)</li>
+<li>funding acknowledgments / how to cite</li>
 </ul>
 </li>
-<li>Higher-level organization I group project folders based on task:
+<li>Higher-level organization (personal recommendation)
 <pre class="hljs remark-code">
 hye/
 ├── grants/
@@ -231,14 +231,15 @@ hye/
 </li>
 <li>Summary
 <ul>
-<li>for individual project, store files and <strong>information</strong> in the same place
+<li>store related files and <strong>information</strong> together in the same place
 <ul>
 <li>don’t rely on memory!</li>
 </ul>
 </li>
-<li>make the project easy to navigate and engage with:
+<li>make the project easy to engage with
 <ul>
-<li>if someone is looking for details, they know where to look</li>
+<li>someone invested in the details will seek you out</li>
+<li>reduce barriers for collaborators or strangers to comment, contribute, etc.</li>
 </ul>
 </li>
 </ul>
@@ -276,15 +277,15 @@ yearly-report_2020-06-01_hy-comments.docx
 </li>
 <li>Machine-Readable
 <ul>
-<li>Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
+<li>Avoid spaces, punctuation, accented characters, mixing CAPS and lowercase.
 <ul>
-<li>computers and filesystems can struggle with these</li>
-<li>easier names help people remember, too!</li>
+<li>computers can struggle with these</li>
+<li>easier names help people remember!</li>
 </ul>
 </li>
 <li>Separate words with hyphens <code>'-'</code>
 </li>
-<li>Separate metadata groups with underscores <code>'_'</code>
+<li>Separate groupings with underscores <code>'_'</code>
 </li>
 </ul>
 </li>
@@ -294,7 +295,7 @@ yearly-report_2020-06-01_hy-comments.docx
 <li>For code, use nouns for data objects and verbs for actions:
 <ul>
 <li><code>load-data.R</code></li>
-<li><code>mtcars_measurements.csv</code></li>
+<li><code>data_mtcars.csv</code></li>
 <li><code>make-scatterplot.R</code></li>
 </ul>
 </li>
@@ -313,7 +314,7 @@ yearly-report_2020-06-01_hy-comments.docx
 </li>
 </ul>
 </li>
-<li>Use ISO-8601 for dates:
+<li>Use RFC-3339 for dates:
 <ul>
 <li>
 <code>YYYY-MM-DD</code> format (alphabetical sorting makes it chronological, too!) <img src="https://imgs.xkcd.com/comics/iso_8601_2x.png" width="60%"><a href="https://xkcd.com/1179/" class="external-link">xkcd/1179</a>
@@ -331,15 +332,7 @@ siteB_2020-04-01_weather.dat
 siteB_2020-05-01_animal-count.xls
 siteB_2020-05-01_weather.dat
 </pre>
-<ul>
-<li>files are organized by site
-<ul>
-<li>dates of data collection are visible</li>
-<li>for a given site and date, types of measurement are clear</li>
-</ul>
-</li>
-</ul>
-</li>
+files are organized by site -&gt; date -&gt; type of measurement</li>
 <li>Summary
 <ul>
 <li>you probably use names to organize files already!
@@ -352,9 +345,9 @@ siteB_2020-05-01_weather.dat
 </li>
 </ul>
 </div>
-<div id="structuring-tabular-data" class="section level2">
+<div id="structuring-tabular-data-eg-spreadsheets" class="section level2">
 <h2 class="hasAnchor">
-<a href="#structuring-tabular-data" class="anchor" aria-hidden="true"></a>Structuring Tabular Data</h2>
+<a href="#structuring-tabular-data-eg-spreadsheets" class="anchor" aria-hidden="true"></a>Structuring Tabular Data (e.g. spreadsheets)</h2>
 <ul>
 <li>Principles Make it easy for anyone to work with your data:
 <ul>
@@ -379,18 +372,26 @@ siteB_2020-05-01_weather.dat
 </ul>
 </li>
 <li>multiple variables are stored in one column</li>
-<li>some variables are stored in rows in addition to columns</li>
+<li>variables are stored in rows and columns</li>
 <li>“1 observational unit = 1 table” is violated
 <ul>
-<li>e.g. subject info and samples are stored in one table</li>
+<li>e.g. subject info and measurements are stored in the same table</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Column Labels are Values |name|Thin Mints|Samoas|Tagalongs| |–|–|–|–| |A|4|0|0| |B|2|0|2| |c|0|3|1|</li>
-<li>Column Labels Fixed |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|</li>
-<li>Multiple Observational Units |name|address|flavor|boxes| |–|–|–|–| |A|3828 Piermont Dr|Thin Mints|4| |B|221B Baker St|Thin Mints|2| |B|221B Baker St|Tagalongs|2| |C|124 Conch St|Samoas|3| |C|124 Conch St|Tagalongs|1|</li>
-<li>Fixed Tables .pull-left[ |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|] .pull-right[ |name|address| |–|–| |A|3828 Piermont Dr| |B|221B Baker St| |C|124 Conch St|]</li>
+<li>Example: column labels encoding data
+<ul>
+<li>wide-format data |name|Thin Mints|Samoas|Tagalongs| |–|–|–|–| |A|4|0|0| |B|2|0|2| |c|0|3|1|</li>
+</ul>
+</li>
+<li>Example: re-structured columns
+<ul>
+<li>long-format data |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|</li>
+</ul>
+</li>
+<li>Example: multiple observational units |name|address|flavor|boxes| |–|–|–|–| |A|3828 Piermont Dr|Thin Mints|4| |B|221B Baker St|Thin Mints|2| |B|221B Baker St|Tagalongs|2| |C|124 Conch St|Samoas|3| |C|124 Conch St|Tagalongs|1|</li>
+<li>Example: separate tables .pull-left[ |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|] .pull-right[ |name|address| |–|–| |A|3828 Piermont Dr| |B|221B Baker St| |C|124 Conch St|]</li>
 <li>Spreadsheet Formatting
 <ul>
 <li>prefer empty cells or <code>'NA'</code> for missing data
@@ -400,10 +401,10 @@ siteB_2020-05-01_weather.dat
 </li>
 <li>do NOT space out data with empty rows/columns</li>
 <li>do NOT use text formatting (e.g. bold/italics) to store information</li>
-<li>Excel LOVES to convert data into a date format</li>
+<li>WATCH OUT: Excel LOVES to convert data into a date format</li>
 </ul>
 </li>
-<li>Spreadsheet Example <img src="spreadsheet_formatting.png" alt="Figure 10 from Broman &amp; Woo “Data Organization in Spreadsheets”, showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."> Instead of highlighting the cells with outliers, encode outlier status as its own column.</li>
+<li>Example: spreadsheet formatting <img src="spreadsheet_formatting.png" alt="Figure 10 from Broman &amp; Woo “Data Organization in Spreadsheets”, showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."> Instead of highlighting the cells with outliers, encode outlier status as its own column.</li>
 <li>Raw Data
 <ul>
 <li>store raw data for reproducibility
@@ -415,14 +416,15 @@ siteB_2020-05-01_weather.dat
 <li>document processing steps in code or text
 <ul>
 <li>someone else can see what processing was done, and reproduce it</li>
-<li>OpenRefine is a great tool for cleaning messy data (and records the steps for you)!</li>
+<li>OpenRefine is a great tool for cleaning messy data (and records the steps for you)!<br><a href="https://uf-repro.github.io/OpenRefine-intro/" class="external-link uri">https://uf-repro.github.io/OpenRefine-intro/</a>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Data Dictionary
 <ul>
-<li>define your rows and columns are
+<li>define your rows and columns
 <ul>
 <li>e.g. do rows correspond to:
 <ul>
@@ -435,7 +437,7 @@ siteB_2020-05-01_weather.dat
 </li>
 <li>define codes, categories, acronyms</li>
 <li>define relationships between multiple tables</li>
-<li><a href="https://guides.uflib.ufl.edu/datamanagement/metadata" class="external-link">more detail on metadata</a></li>
+<li><a href="https://guides.uflib.ufl.edu/datamanagement/metadata" class="external-link">provide metadata details</a></li>
 </ul>
 </li>
 <li>Example Data Dictionary .compact-table[ |name|plot_name|group|description|type| |–|–|–|–|–| |mouse|Mouse|demographic|Animal identifier|text| |sex|Sex|demographic|Male (M) or Female (F)|factor| |sac_date|Date of sac|demographic|Date mouse was sacrificed|date| |partial_inflation|Partial inflation|clinical|Indicates if mouse showed partial pancreatic inflation|logical| |coat_color|Coat color|demographic|Coat color, by visual inspection|factor| |crumblers|Crumblers|clinical|Indicates if mouse stored food in their bedding|logical| |diet_days|Days on diet|clinical|Number of days on high-fat diet|numeric|] (modified from Figure 9 of Broman &amp; Woo “Data Organization in Spreadsheets”)</li>

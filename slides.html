@@ -17,7 +17,7 @@ class: inverse, center, middle
 # Data Organization in Spreadsheets
 ### Hao Ye
 ### Health Science Center Libraries, University of Florida
-### (updated: 2021-05-10)
+### (updated: 2021-06-01)
 
 ---
 
@@ -29,8 +29,8 @@ Why should you care about this topic?
 
 Organizing your projects and data will:
 * improve reproducibility
-* facilitate scaling up of projects
-* make it easier for anyone to build off it later
+* enable you to scale up projects
+* make it easier to build off it later
 --
 
   **this includes yourself at a later point!**
@@ -55,19 +55,23 @@ class: inverse, center, middle
 # Principles
 
 * You don't want to spend time looking for stuff.
-  The same is true for your collaborators.
-  - Keep all files associated with a project in **one** place.
-* Document key decisions about the project.
-  - Anyone with access to the project folder should be able to access information about data, results, etc.
+  Neither do your collaborators.
+* Keep all files associated with a project in **one** place.
+  - project description
+  - data
+  - code
+  - figures
+  - manuscript
+
 ---
 
 # Practices
 
 * Use sub-folders to organize data, figures, manuscript, etc.
   - separate raw and processed data
-* Maintain documentation on:
+* Use `README` files to document:
   - who did the experiments
-  - the formatting of the data
+  - data formatting
     (more on this later)
   - when/how/why
 
@@ -92,18 +96,18 @@ project/
 # A Project README
 
 * short summary of project &amp; goals
-* include guidance for the most common/important task
+* guidance for interacting with the project
   - (software) how to install and run it
   - (paper) which file is the final report/paper
   - (data) the summary figure or main file
-* acknowledgments
-* how to cite the work
+* description of folders (if non-standard)
+* funding acknowledgments / how to cite
 
 ---
 
 # Higher-level organization
 
-I group project folders based on task:
+(personal recommendation)
 
 &lt;pre class = "hljs remark-code"&gt;
 hye/
@@ -120,10 +124,11 @@ hye/
 ---
 # Summary
 
-* for individual project, store files and **information** in the same place
+* store related files and **information** together in the same place
   - don't rely on memory!
-* make the project easy to navigate and engage with:
-  - if someone is looking for details, they know where to look
+* make the project easy to engage with
+  - someone invested in the details will seek you out
+  - reduce barriers for collaborators or strangers to comment, contribute, etc.
   
 ---
 class: inverse, center, middle
@@ -166,11 +171,11 @@ yearly-report_2020-06-01_hy-comments.docx
 ---
 # Machine-Readable
 
-* Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
-  - computers and filesystems can struggle with these
-  - easier names help people remember, too!
+* Avoid spaces, punctuation, accented characters, mixing CAPS and lowercase.
+  - computers can struggle with these
+  - easier names help people remember!
 * Separate words with hyphens `'-'`
-* Separate metadata groups with underscores `'_'`
+* Separate groupings with underscores `'_'`
 
 ---
 
@@ -179,7 +184,7 @@ yearly-report_2020-06-01_hy-comments.docx
 * Use filenames that will help you find it later.
 * For code, use nouns for data objects and verbs for actions:
   - `load-data.R`
-  - `mtcars_measurements.csv`
+  - `data_mtcars.csv`
   - `make-scatterplot.R`
 
 ---
@@ -190,7 +195,7 @@ yearly-report_2020-06-01_hy-comments.docx
   - we can make use of this!
 * Left-pad with numbers to impose an order on files:
   - e.g. `01_load-data.R`, `02_process-data.R`
-* Use ISO-8601 for dates:
+* Use RFC-3339 for dates:
   - `YYYY-MM-DD` format (alphabetical sorting makes it chronological, too!)
 
 ---
@@ -213,9 +218,7 @@ siteB_2020-05-01_weather.dat
 &lt;/pre&gt;
 
 --
-* files are organized by site
-  - dates of data collection are visible
-  - for a given site and date, types of measurement are clear
+files are organized by site -&gt; date -&gt; type of measurement
 
 ---
 
@@ -228,7 +231,7 @@ siteB_2020-05-01_weather.dat
 ---
 class: inverse, center, middle
 
-# Structuring Tabular Data
+# Structuring Tabular Data (e.g. spreadsheets)
 
 ---
 
@@ -256,13 +259,15 @@ Properties of *tidy data*:
 * data values are stored in column headers
   - e.g. treatment values, dates of sampling
 * multiple variables are stored in one column
-* some variables are stored in rows in addition to columns
+* variables are stored in rows and columns
 * "1 observational unit = 1 table" is violated
-  - e.g. subject info and samples are stored in one table
+  - e.g. subject info and measurements are stored in the same table
 
 ---
 
-# Column Labels are Values
+# Example: column labels encoding data
+
+* wide-format data
 
 |name|Thin Mints|Samoas|Tagalongs|
 |--|--|--|--|
@@ -272,7 +277,9 @@ Properties of *tidy data*:
 
 ---
 
-# Column Labels Fixed
+# Example: re-structured columns
+
+* long-format data
 
 |name|flavor|boxes|
 |--|--|--|
@@ -284,7 +291,7 @@ Properties of *tidy data*:
 
 ---
 
-# Multiple Observational Units
+# Example: multiple observational units
 
 |name|address|flavor|boxes|
 |--|--|--|--|
@@ -296,7 +303,7 @@ Properties of *tidy data*:
 
 ---
 
-# Fixed Tables
+# Example: separate tables
 
 .pull-left[
 |name|flavor|boxes|
@@ -323,10 +330,10 @@ Properties of *tidy data*:
   - *be careful about `'NA'` for certain types of data (e.g. country code for "Namibia")*
 * do NOT space out data with empty rows/columns
 * do NOT use text formatting (e.g. bold/italics) to store information
-* Excel LOVES to convert data into a date format
+* WATCH OUT: Excel LOVES to convert data into a date format
 
 ---
-# Spreadsheet Example
+# Example: spreadsheet formatting
 
 ![Figure 10 from Broman &amp; Woo "Data Organization in Spreadsheets", showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column.](spreadsheet_formatting.png)
 
@@ -341,20 +348,21 @@ Instead of highlighting the cells with outliers, encode outlier status as its ow
   - and/or use scripts to clean/wrangle raw data
 * document processing steps in code or text
   - someone else can see what processing was done, and reproduce it
-  - OpenRefine is a great tool for cleaning messy data (and records the steps for you)!
+  - OpenRefine is a great tool for cleaning messy data (and records the steps for you)!  
+  https://uf-repro.github.io/OpenRefine-intro/
 
 ---
 
 # Data Dictionary
 
-* define your rows and columns are
+* define your rows and columns
   - e.g. do rows correspond to:
      + individual subjects
      + OR data collection sessions
      + OR individual samples from a measurement device
 * define codes, categories, acronyms
 * define relationships between multiple tables
-* [more detail on metadata](https://guides.uflib.ufl.edu/datamanagement/metadata)
+* [provide metadata details](https://guides.uflib.ufl.edu/datamanagement/metadata)
 
 ---
 
