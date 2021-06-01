@@ -44,7 +44,7 @@ style_mono_accent(
 
 class: inverse, center, middle
 
-# `r rmarkdown::metadata$title`
+# `r desc::desc_get('Title', '..')`
 ### `r rmarkdown::metadata$author`
 ### `r rmarkdown::metadata$institute`
 ### (updated: `r Sys.Date()`)
@@ -71,9 +71,7 @@ Organizing your projects and data will:
 
 By the end of the workshop, participants will be able to:
 
-* better organize file and folders for research projects
-* use and apply file naming conventions
-* understand the principles of tidy data for structuring tabular data
+`r gsub("\n ", "\n", desc::desc_get("learningOutcomes"))`
 
 ---
 class: inverse, center, middle

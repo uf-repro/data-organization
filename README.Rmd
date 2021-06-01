@@ -1,0 +1,62 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+```{r, include = FALSE}
+
+lesson_title <- "Data Organization in Spreadsheets"
+lesson_description <- "This workshop guides researchers on organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of their choice. Attendees will gain an understanding of the principles and practices in project organization, file naming, and structuring tidy data."
+lesson_keywords <- c("Open Educational Resources",
+                     "Research Support Skills",
+                     "Research Data Management", 
+                     "Spreadsheet",
+                     "Workshop", 
+                     "Data")
+
+desc::desc_set(Title = lesson_title, 
+               Description = lesson_description)
+
+zenodo_json <- jsonlite::read_json(".zenodo.json")
+zenodo_json$title <- lesson_title
+zenodo_json$description <- lesson_description
+zenodo_json$keywords <- as.list(lesson_keywords)
+jsonlite::write_json(zenodo_json, ".zenodo.json", 
+                     auto_unbox = TRUE, pretty = TRUE)
+```
+
+# `r lesson_title`
+
+<!-- badges: start -->
+[![GitHub Actions pkgdown workflow](https://github.com/uf-repro/data-organization/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/data-organization/actions?query=workflow%3Apkgdown)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3892183.svg)](https://doi.org/10.5281/zenodo.3892183)
+
+<!-- badges: end -->
+
+## Description
+
+`r lesson_description`
+
+## Learning Outcomes
+
+```{r, include = FALSE}
+learning_outcomes <- c("implement recommended practices for file and folder organization in projects", 
+                       "use and apply file naming conventions", 
+                       "understand the principles of tidy data for structuring tabular data")
+outcomes_text <- paste0("* ", learning_outcomes, collapse = "\n")
+desc::desc_set("learningOutcomes", outcomes_text)
+```
+
+By the end of the workshop, participants will be able to:
+
+`r outcomes_text`
