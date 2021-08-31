@@ -15,7 +15,7 @@
   - paper from Ben Marwick, Carl Boettiger, and Lincoln Mullen on structuring projects as Research Compendia, with examples of varying complexity
 
 * ["Foundational Practices of Research Data Management"](https://riojournal.com/article/56508/element/8/103152/)
-  - paper from Kristin A. Briney, Heather Coates, and Abigail Goven on research data management
+  - paper from Kristin A. Briney, Heather Coates, and Abigail Goben on research data management
 
 ## Tabular Data
 * ["Tidy Data"](https://www.jstatsoft.org/article/view/v059i10)
