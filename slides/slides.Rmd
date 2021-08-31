@@ -168,7 +168,7 @@ class: inverse, center, middle
 Choose file names that:
 * are machine-readable
 * are human-readable
-* play well with default ordering
+* sort nicely
 
 ---
 
@@ -217,7 +217,7 @@ yearly-report_2020-06-01_hy-comments.docx
 
 # Using Default Ordering
 
-* Computers like to sort files alphabetically:
+* Files are sorted alphabetically by default.
   - we can make use of this!
 * Left-pad with numbers to impose an order on files:
   - e.g. `01_load-data.R`, `02_process-data.R`
