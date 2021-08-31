@@ -133,9 +133,7 @@ project/
 
 ---
 
-# Higher-level organization
-
-(personal recommendation)
+# Where to store projects
 
 <pre class = "hljs remark-code">
 hye/
@@ -147,16 +145,16 @@ hye/
 └── websites/
 </pre>
 --
-* easier to copy-paste from existing projects
+
+* find similar types of projects in the same place  
+  (easier to copy-paste from existing projects)
 
 ---
 # Summary
 
-* store related files and **information** together in the same place
-  - don't rely on memory!
+* store project files and **project information** together in the same place
 * make the project easy to engage with
-  - someone invested in the details will seek you out
-  - reduce barriers for collaborators or strangers to comment, contribute, etc.
+  - you don't need to document everything, someone invested in the details will seek you out
   
 ---
 class: inverse, center, middle
