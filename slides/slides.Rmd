@@ -97,7 +97,7 @@ class: inverse, center, middle
 
 * Use sub-folders to organize data, figures, manuscript, etc.
   - separate raw and processed data
-* Use `README` files to document:
+* Use `README` files to record:
   - who did the experiments
   - data formatting
     (more on this later)
@@ -130,24 +130,6 @@ project/
   - (data) the summary figure or main file
 * description of folders (if non-standard)
 * funding acknowledgments / how to cite
-
----
-
-# Where to store projects
-
-<pre class = "hljs remark-code">
-hye/
-├── grants/
-├── presentations_and_travel/
-├── projects/
-├── teaching/
-├── vitae/
-└── websites/
-</pre>
---
-
-* find similar types of projects in the same place  
-  (easier to copy-paste from existing projects)
 
 ---
 # Summary
