@@ -1,6 +1,6 @@
-Package: DataOrganizationWorkshop
+Package: data.organization
 Title: Data Organization in Spreadsheets
-Version: 1.1.4
+Version: 1.1.5
 Authors@R: 
     person(given = "Hao",
            family = "Ye",
@@ -28,3 +28,4 @@ Depends:
 learningOutcomes: * implement recommended practices for file and folder organization in projects
  * use and apply file naming conventions
  * understand the principles of tidy data for structuring tabular data
+X-schema.org-keywords: Open Educational Resources, Research Support Skills, Research Data Management, Spreadsheet, Workshop, Data
