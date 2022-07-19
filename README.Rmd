@@ -47,7 +47,7 @@ cite_data <- list(
                  orcid = "0000-0002-8630-1458")), 
     description = lesson_description, 
     keywords = as.list(lesson_keywords), 
-    license = desc::desc_get("License"), 
+    license = cffr:::parse_desc_license(desc::desc()), 
     upload_type = "lesson"
 )
 
