@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 lesson_title <- "Data Organization in Spreadsheets"
 lesson_description <- "This workshop guides researchers on organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of their choice. Attendees will gain an understanding of the principles and practices in project organization, file naming, and structuring tidy data."
-lesson_version <- "1.1.5"
+lesson_version <- "1.1.6"
 lesson_keywords <- c("Open Educational Resources",
                      "Research Support Skills",
                      "Research Data Management", 

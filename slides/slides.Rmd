@@ -93,11 +93,11 @@ class: inverse, center, middle
 
 ---
 
-# Practices
+# Recommendations
 
 * Use sub-folders to organize data, figures, manuscript, etc.
   - separate raw and processed data
-* Use `README` files to record:
+* Write `README` files to document:
   - who did the experiments
   - data formatting
     (more on this later)
@@ -134,10 +134,10 @@ project/
 ---
 # Summary
 
-* store project files and **project information** together in the same place
-* make the project easy to engage with
-  - you don't need to document everything, someone invested in the details will seek you out
-  
+* keep the project files and **information about the project** together in the same place
+* give simple instructions to engage with your project
+  - think of it as a free sample that helps people decide if your project is useful to them!
+
 ---
 class: inverse, center, middle
 
@@ -147,7 +147,7 @@ class: inverse, center, middle
 
 # Principles
 
-Choose file names that:
+Choose names for file that:
 * are machine-readable
 * are human-readable
 * sort nicely
@@ -181,7 +181,7 @@ yearly-report_2020-06-01_hy-comments.docx
 
 * Avoid spaces, punctuation, accented characters, mixing CAPS and lowercase.
   - computers can struggle with these
-  - easier names help people remember!
+  - simple names are easier to remember
 * Separate words with hyphens `'-'`
 * Separate groupings with underscores `'_'`
 
@@ -189,7 +189,8 @@ yearly-report_2020-06-01_hy-comments.docx
 
 # Human-Readable
 
-* Use filenames that will help you find it later.
+* Filenames do not need to be 100% thorough
+* Filenames *should* help you find it later when you need to
 * For code, use nouns for data objects and verbs for actions:
   - `load-data.R`
   - `data_mtcars.csv`
@@ -199,7 +200,7 @@ yearly-report_2020-06-01_hy-comments.docx
 
 # Using Default Ordering
 
-* Files are sorted alphabetically by default.
+* Files can be sorted alphabetically (and usually)
   - we can make use of this!
 * Left-pad with numbers to impose an order on files:
   - e.g. `01_load-data.R`, `02_process-data.R`
@@ -235,8 +236,8 @@ files are organized by site -> date -> type of measurement
 # Summary
 
 * you probably use names to organize files already!
-  - these tips can help improve your system
-* use a consistent scheme for labeling
+  - use these tips to improve your system
+* consistency is important!
 
 ---
 class: inverse, center, middle
@@ -336,7 +337,7 @@ Properties of *tidy data*:
 ---
 # Spreadsheet Formatting
 
-* prefer empty cells or `'NA'` for missing data
+* for missing data, use empty cells or `'NA'`
   - *be careful about `'NA'` for certain types of data (e.g. country code for "Namibia")*
 * do NOT space out data with empty rows/columns
 * do NOT use text formatting (e.g. bold/italics) to store information
