@@ -123,18 +123,20 @@ project/
 ---
 # A Project README
 
-* short summary of project & goals
+A plain text file containing:
+* a short summary of project & goals
 * guidance for interacting with the project
   - (software) how to install and run it
   - (paper) which file is the final report/paper
   - (data) the summary figure or main file
-* description of folders (if non-standard)
 * funding acknowledgments / how to cite
 
 ---
 # Summary
 
-* keep the project files and **information about the project** together in the same place
+* keep project stuff together in the same place
+  - files related to the project
+  - **key information** about the project (creating files for this if necessary!)
 * give simple instructions to engage with your project
   - think of it as a free sample that helps people decide if your project is useful to them!
 
@@ -189,7 +191,7 @@ yearly-report_2020-06-01_hy-comments.docx
 
 # Human-Readable
 
-* Filenames do not need to be 100% thorough
+* Filenames do not need to be very detailed
 * Filenames *should* help you find it later when you need to
 * For code, use nouns for data objects and verbs for actions:
   - `load-data.R`
@@ -250,8 +252,8 @@ class: inverse, center, middle
 
 Make it easy for anyone to work with your data:
 * Structure data for analysis (i.e. "Tidy Data")
-* Don't use text-formatting to store information!
-* Don't modify raw data
+* Store important information explicitly
+* Keep an archive of raw data
 * Include a Data Dictionary
 
 ---
