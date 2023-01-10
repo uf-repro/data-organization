@@ -59,7 +59,7 @@
     </div>
 
 <div id="syllabus" class="section level1">
-<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2022-09-06)</p>
+<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2023-01-10)</p>
 <div class="section level2">
 <h2 id="intro">Intro<a class="anchor" aria-label="anchor" href="#intro"></a></h2>
 <ul><li>Motivations Why should you care about this topic? Organizing your projects and data will:<ul><li>improve reproducibility</li>
@@ -99,15 +99,17 @@ project/
 </pre>
 <ul><li>more examples in <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986" class="external-link">Marwick et al. 2018 “Packaging Data Analytical Work Reproducibly Using R (and Friends)”</a>
 </li></ul></li>
-<li>A Project README<ul><li>short summary of project &amp; goals</li>
+<li>A Project README A plain text file containing:<ul><li>a short summary of project &amp; goals</li>
 <li>guidance for interacting with the project<ul><li>(software) how to install and run it</li>
 <li>(paper) which file is the final report/paper</li>
 <li>(data) the summary figure or main file</li>
 </ul></li>
-<li>description of folders (if non-standard)</li>
 <li>funding acknowledgments / how to cite</li>
 </ul></li>
-<li>Summary<ul><li>keep the project files and <strong>information about the project</strong> together in the same place</li>
+<li>Summary<ul><li>keep project stuff together in the same place<ul><li>files related to the project</li>
+<li>
+<strong>key information</strong> about the project (creating files for this if necessary!)</li>
+</ul></li>
 <li>give simple instructions to engage with your project<ul><li>think of it as a free sample that helps people decide if your project is useful to them!</li></ul></li>
 </ul></li>
 </ul></div>
@@ -141,7 +143,7 @@ yearly-report_2020-06-01_hy-comments.docx
 <li>Separate groupings with underscores <code>'_'</code>
 </li>
 </ul></li>
-<li>Human-Readable<ul><li>Filenames do not need to be 100% thorough</li>
+<li>Human-Readable<ul><li>Filenames do not need to be very detailed</li>
 <li>Filenames <em>should</em> help you find it later when you need to</li>
 <li>For code, use nouns for data objects and verbs for actions:<ul><li><code>load-data.R</code></li>
 <li><code>data_mtcars.csv</code></li>
@@ -170,8 +172,8 @@ siteB_2020-05-01_weather.dat
 <div class="section level2">
 <h2 id="structuring-tabular-data-eg-spreadsheets">Structuring Tabular Data (e.g. spreadsheets)<a class="anchor" aria-label="anchor" href="#structuring-tabular-data-eg-spreadsheets"></a></h2>
 <ul><li>Principles Make it easy for anyone to work with your data:<ul><li>Structure data for analysis (i.e. “Tidy Data”)</li>
-<li>Don’t use text-formatting to store information!</li>
-<li>Don’t modify raw data</li>
+<li>Store important information explicitly</li>
+<li>Keep an archive of raw data</li>
 <li>Include a Data Dictionary</li>
 </ul></li>
 <li>Tidy Data Properties of <em>tidy data</em>:<ul><li>each column is a variable</li>
@@ -233,7 +235,7 @@ siteB_2020-05-01_weather.dat
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.9000.</p>
 </div>
 
       </footer></div>
