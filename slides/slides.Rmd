@@ -149,7 +149,7 @@ class: inverse, center, middle
 
 # Principles
 
-Choose names for file that:
+Choose names for files that:
 * are machine-readable
 * are human-readable
 * sort nicely
